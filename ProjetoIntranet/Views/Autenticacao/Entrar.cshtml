@@ -1,0 +1,37 @@
+﻿@Recursos.Resources.Culture
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Entrar</title>
+</head>
+<body>
+    <div> 
+
+        @using (Html.BeginForm("Entrar", "Autenticacao", FormMethod.Post))
+        {
+
+            <span class="text-danger"> @ViewBag.LoginError </span><br>
+
+            @Html.Label(Recursos.Resources.Usuario);<br>
+            @Html.TextBox("nomeUsuario", "", new { id = "txbUsuario" });<br><br>
+            @Html.Label(Recursos.Resources.Senha);<br>
+            @Html.Password("Senha", "", new { id = "txbSenha" });<br><br>
+
+            <button id="btn-logar" type="submit" class="btn btn-success">
+
+                <span class="glyphicon glyphicon-off"> @Recursos.Resources.ENTRAR </span>
+
+            </button>
+
+        }
+
+    </div>
+</body>
+</html>

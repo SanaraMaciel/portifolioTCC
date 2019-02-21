@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Upload</title>
+</head>
+<body>
+    <div> 
+
+        @using (Html.BeginForm("Upload","Home",FormMethod.Post, new {enctype="multipart/form-data"})) {
+
+
+            <label for="file">upload file</label>
+            <input type="file" name="arq" id="arq"><br><br>
+            <input type="submit" value="upload file"> <br >
+
+
+        }
+
+        @ViewBag.aviso
+    </div>
+</body>
+</html>

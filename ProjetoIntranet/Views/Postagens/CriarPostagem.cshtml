@@ -1,0 +1,198 @@
+﻿@model ProjetoIntranet.Models.Entity.Postagem
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "CriarPostagem";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper selected(string c, string culture, string View = "CriarPostagem")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "Postagens", new { View = "CriarPostagem" }))
+    {
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+<h2>@Recursos.Resources.CriarPostagem</h2>
+
+
+
+
+@using (Html.BeginForm("CriarPostagem", "Postagens", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-group", @id = "form-postagem" }))
+{
+    <div class="form-group">
+        @Html.ValidationSummary()
+        @Html.AntiForgeryToken()
+
+
+        @Html.Label("titulo", Recursos.Resources.Titulo)
+        @Html.TextBoxFor(x => x.titulo, new { @class = "form-control" })
+
+
+
+        <br>
+
+
+        @Html.Label("corpo", Recursos.Resources.Corpo)
+        @Html.TextAreaFor(x => x.corpo, new { @class = "form-control" })
+
+
+
+        <br>
+
+
+
+        @Html.Label("etiqueta", Recursos.Resources.Etiqueta)
+
+        <a data-toggle="modal" data-target="#helpModalTag"><span id="glyph-btn" class="glyphicon glyphicon-question-sign"> </span></a>
+
+        @Html.TextBoxFor(x => x.etiqueta, new { @class = "form-control" })
+
+
+        <br>
+
+        <label for="file">@Recursos.Resources.EnviarImagens</label>
+        <input type="file" name="imagens" id="imagens" multiple><br><br>
+
+        <input type="checkbox" id="checkBox" name="checkbox"> @Recursos.Resources.Marcar
+        <a data-toggle="modal" data-target="#helpModalPub2"><span id="glyph-btn" class="glyphicon glyphicon-question-sign"> </span></a>
+
+        <br>
+        <br>
+        <button id="btn-enviar-postagem" type="submit" class="btn btn-success">
+            <span class="glyphicon glyphicon-ok">@Recursos.Resources.Enviar </span>
+        </button>
+
+
+
+
+    </div>
+}
+
+
+
+
+
+
+<div class="container ajuda">
+    <div class="modal fade" id="helpModalTag" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="alert alert-info" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Info:</span>
+                    <b>Também conhecidas com TAGS,as etiquetas devem ser separadas por virgulas.</b>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container ajuda">
+    <div class="modal fade " id="postagemOK" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Sucesso:</span>
+                    <b>Salvo com sucesso!</b>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container ajuda">
+    <div class="modal fade" id="helpModalPub2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                <div class="alert alert-info" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Info:</span>
+                    <b>Se esta opção estiver marcada,ao salvar a postagem , ela não será pulicada ainda,podendo ser publicada posteriormente</b>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container ajuda">
+    <div class="modal fade" id="postagemVazia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <b>O formulário possui campos vazios!</b>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container ajuda">
+    <div class="modal fade" id="erroUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <b>deu ruim!</b>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

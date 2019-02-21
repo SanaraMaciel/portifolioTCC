@@ -1,0 +1,54 @@
+﻿@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "Negado";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@helper selected(string c, string culture, string View = "Negado")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "AcessoNegado", new { View = "Negado" }))
+    {
+
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Recursos.Resources.Negado</title>
+</head>
+<body>
+
+       
+    
+    
+
+            <div class="container">
+                <h3 class="" style="position:absolute; left:5%;top:500%;">@Recursos.Resources.Permissao @Html.ActionLink(Recursos.Resources.Voltar, "Principal", "Home")</h3>
+                <div class="row">
+                    <img src="~/Resources/negado.jpg" style="width:300px; height:300px; position:absolute;right:40%; top:200px/"></img>
+
+                </div>
+            <br>
+        </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model ProjetoIntranet.Models.Entity.GrupoUsuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TesteId</title>
+</head>
+<body>
+    <div> 
+
+        @using (Html.BeginForm("TesteId","GrupoUsuario",FormMethod.Post)) {
+
+
+            @Html.Label("Insira uma ID: ");
+            @Html.TextBoxFor(x => x.id);<br>
+
+            <input type="submit" value="testar!">
+
+        }
+
+    </div>
+</body>
+</html>

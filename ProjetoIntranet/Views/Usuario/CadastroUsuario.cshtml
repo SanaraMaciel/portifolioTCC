@@ -1,0 +1,127 @@
+﻿@model ProjetoIntranet.Models.Entity.Usuario
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "CadastroUsuario";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@helper selected(string c, string culture, string View = "CadastroUsuario")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "Usuario", new { View = "CadastroUsuario" }))
+    {
+
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+<h2>@Recursos.Resources.CadastrarUsuario</h2>
+
+@using (Html.BeginForm("CadastroUsuario","Usuario",FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+      
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.Nome, new { @class = "control-label col-md-2", @for="nome"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.Cargo, new { @class = "control-label col-md-2", @for = "cargo" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cargo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cargo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.LoginUsuario, new { @class = "control-label col-md-2", @for = "usuarioLogin" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.usuarioLogin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.usuarioLogin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.Senha, new { @class = "control-label col-md-2", @for = "senha" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.senha, new { htmlAttributes = new { @class = "form-control" ,@type ="password" } })
+                @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.centroCusto, new { @class = "control-label col-md-2", @for = "centroCusto" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.centroCusto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.centroCusto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.Email, new { @class = "control-label col-md-2", @for = "email" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.BU, new { @class = "control-label col-md-2", @for = "bU" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.bU, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.bU, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.Setor, new { @class = "control-label col-md-2", @for = "setor" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.setor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.setor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label(Recursos.Resources.situacao, new { @class = "control-label col-md-2", @for = "situacao" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.situacao)
+                    @Html.ValidationMessageFor(model => model.situacao, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@Recursos.Resources.Salvar" class="btn btn-success" /><br>
+            </div>
+        </div>
+    </div>
+}
+
+

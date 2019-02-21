@@ -1,0 +1,68 @@
+﻿@model PagedList.IPagedList<Model.Entity.Curriculo>
+@using PagedList.Mvc
+@using PagedList
+
+
+
+@{
+    ViewBag.Title = "ListarCurriculos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Curriculos Cadastrados</h2>
+@using (Html.BeginForm("ListarPorArea", "Curriculo", FormMethod.Post))
+{
+    <p>Pesquisar Por Área</p>
+    @Html.Label("Digite a área a ser pesquisada:");
+    @Html.TextBox("area")
+    <input type="submit" class="btn btn-default" value="pesquisar" title="clique para pesquisar"/>
+}
+
+@using (Html.BeginForm("ListarPorData", "Curriculo", FormMethod.Post))
+{
+    <p>Pesquisar Por Data</p>
+    @Html.Label("Data Inicial:");
+    @Html.TextBox("dataInicial") @Html.Label("Data Final:"); @Html.TextBox("dataFim")
+    <input type="submit" class="btn btn-default" value="pesquisar" title="clique para pesquisar"/>
+
+}
+
+<br>
+<br>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nome:")
+        </th>
+        <th>
+            @Html.DisplayName("Telefone Celular:")
+    </th>
+    <th>
+        @Html.DisplayName("e-mail:")
+    </th>
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefoneCelular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.ActionLink("Detalhar ", "Detalhes", "Curriculo", new { id = item.id }, new { @class = "btn-large btn-default", title="clique para detalhes do currículo" }) |
+            @Html.ActionLink("Excluir", "Excluir", "Curriculo", new { id = item.id }, new { @class = "btn btn-danger", title="clique para excluir o currículo" })
+            @Html.ActionLink("Baixar", "Arquivo", "Curriculo", new { id = item.anexo.id }, new { @class = "btn-large btn-default", title="clique para baixar arquivo " })
+        </td>
+    </tr>
+}
+
+</table>
+
+Página @Model.PageNumber de @Model.PageCount
+@Html.PagedListPager(Model, Page => Url.Action("ListarCurriculos", new { pagina = Page }))

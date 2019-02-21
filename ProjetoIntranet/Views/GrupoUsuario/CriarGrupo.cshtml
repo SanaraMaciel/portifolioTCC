@@ -1,0 +1,155 @@
+﻿@model ProjetoIntranet.Models.Entity.GrupoUsuario
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "CriarGrupo";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@helper selected(string c, string culture, string View = "CriarGrupo")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "GrupoUsuario", new { View = "CriarGrupo" }))
+    {
+
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+<h2>@Recursos.Resources.CriarGrupo</h2>
+
+<div class="form-group">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+
+    @Html.Label(Recursos.Resources.Nome )
+    @Html.TextBoxFor(m => m.nome, new { @class = "form-control nomeGrupo" })
+    <br>
+    @Html.Label(Recursos.Resources.Descricao)
+    @Html.TextBoxFor(m => m.descricao, new { @class = "form-control descricaoGrupo" })
+    <br>
+    @Html.Label(Recursos.Resources.UrlGrafico)
+
+    <a data-toggle="modal" data-target="#helpModal"><span id="glyph-btn" class="glyphicon glyphicon-question-sign"> </span></a>
+
+    
+    @Html.TextBoxFor(m => m.graficoUrl,new {@class = "form-control" })
+
+    <br>
+
+    <div class="panel panel-default">
+
+        <div class="panel panel-heading">
+
+            <h3 class="panel-title"><b>@Recursos.Resources.Privilegios</b> </h3>
+
+        </div>
+
+        <div class="panel panel-body">
+
+            @foreach (var item in ViewBag.privilegios)
+            {
+
+            <div class="checkbox-inline">
+
+                <label>
+                    <input type="checkbox" name="privilegios" id="privilegios"  class="privilegios" value="@item.Value" />@item.Text
+
+                </label>
+
+            </div>
+
+            }
+
+        </div>
+
+    </div>
+
+    
+
+
+    <br>
+    <input type="button" id="btn_SalvarGrupo" value="@Recursos.Resources.Salvar" class="btn btn-success">
+    <input type="reset" value="@Recursos.Resources.Cancelar" class="btn btn-danger">
+}
+
+
+</div>
+
+
+
+
+<div class="container ajuda" >
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+           
+           
+            <div class="alert alert-info" role="alert" style="margin-bottom:0px;">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Info:</span>
+                <b>Aqui você deve inserir a URL para acesso ao gráfico desejado. Exemplo de Formato: http: //localhost:51573/GrupoUsuario/CriarGrupo </b>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container ajuda">
+    <div class="modal fade" id="feedbackCriarGrupo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                
+                <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <b>Grupo criado com sucesso!</b>
+                </div>
+
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container ajuda">
+    <div class="modal fade" id="feedbackCamposVazios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+           
+                    <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        <b> Erro: Campo nome e/ou campo privilegios vazios!! </b>
+                    </div>
+                                    
+              
+
+            </div>
+        </div>
+    </div>
+</div>

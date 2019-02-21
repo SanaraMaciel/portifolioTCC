@@ -1,0 +1,155 @@
+﻿@model IEnumerable<ProjetoIntranet.Models.Entity.Usuario>
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "DesativarUsuario";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper selected(string c, string culture, string View = "DesativarUsuario")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "Usuario", new { View = "DesativarUsuario" }))
+    {
+
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+<h2>@Recursos.Resources.DesativarAtivar</h2>
+
+
+<div class="container" style="overflow-x:scroll">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.Nome)
+            </th>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.Cargo)
+            </th>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.LoginUsuario)
+            </th>
+
+            <th>
+                @Html.DisplayName(@Recursos.Resources.centroCusto)
+            </th>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.Email)
+            </th>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.BU)
+            </th>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.Setor)
+            </th>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.Ativo)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cargo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuarioLogin)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.centroCusto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.setor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.situacao)
+                </td>
+
+                <td>
+
+                    @*@Html.ActionLink(" ", "AtivarUsuario", "Usuario", new { id = item.id, @class = "btn btn-primary glyphicon glyphicon-ok" })*@
+
+                    <button type="button" id="@item.id" class="btn btn-primary glyphicon glyphicon-ok ativar" title="clique para ativar usuário"></button>
+
+                    @*@Html.ActionLink(" ", "DesativarUsuario", "Usuario", new { id=item.id, @class = "btn btn-danger glyphicon glyphicon-remove" })*@
+
+                    <button type="button" id="@item.id" class="btn btn-danger glyphicon glyphicon-remove desativar" title="clique para desativar usuário"></button>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+
+
+
+<div class="container ajuda">
+    <div class="modal fade" id="feedbackAtivado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <b>Usuário ativado  com sucesso!</b>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container ajuda">
+    <div class="modal fade" id="feedbackDesativado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <b>Usuário desativado  com sucesso!</b>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

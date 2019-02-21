@@ -1,0 +1,32 @@
+﻿@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "GrupoELinks";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper selected(string c, string culture, string View = "GruposELinks")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+
+
+<h2>@Recursos.Resources.GrupoELinks</h2>
+
+<div class="container">
+
+    <div >
+
+    </div>
+
+
+    <div>
+
+    </div>
+
+</div>

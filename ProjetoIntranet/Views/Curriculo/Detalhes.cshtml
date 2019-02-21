@@ -1,0 +1,68 @@
+﻿@model ProjetoIntranet.Models.Entity.Curriculo
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.nome)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.cpf)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.estado.estado)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.area.cargo)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.dataNascimento)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.uf)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.cep)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.cidade)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.bairro)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.rua)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.numero)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.descricao)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.telefoneFixo)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.telefoneCelular)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.email)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.siteBlog)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.skype)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.remuneracao)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.genero)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => modelItem.anexo.id)
+</td>

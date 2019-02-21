@@ -1,0 +1,149 @@
+﻿@model PagedList.IPagedList<ProjetoIntranet.Models.Entity.Postagem>
+@using PagedList.Mvc
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "ListarPostagensPrincipal";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = null;
+}
+
+@helper selected(string c, string culture, string View = "ListarPostagensPrincipal")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+
+        <!DOCTYPE html>
+
+
+
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>ListarPostagensPrincipal</title>
+        </head>
+        <body>
+
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+
+                    @using (Html.BeginForm("ListarPostagensPrincipal", "Postagens", FormMethod.Post, new { @class = "form-inline", @id = "form-area" }))
+                    {
+                        <div id="form-group-area" class="form-group ">
+
+                            @Html.Label(Recursos.Resources.Buscar, new { @for = "tag", @id = "tag" })
+
+                            @Html.TextBox("tag", null, new { @class = "form-control" })
+
+                        </div>
+
+
+                        <button id="btn-submit-datas" type="submit" class="btn btn-success" title="clique para pesquisar"><span class="glyphicon glyphicon-search"> </span></button>
+                    }
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="panel-body ">
+
+                @foreach (var item in Model)
+                {
+
+
+
+                    <div class="mensagem">
+
+                        <div class="tituloPost">
+
+                            <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
+
+
+                                <div class="abaEsquerda">  </div>
+
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4 fundo-bloco" >
+                                
+
+                                <p style="text-align:center;"> @Html.DisplayFor(modelItem => item.titulo) </p>
+
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right:0px;">
+
+                                <div class="abaDireita">   </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <br>
+
+                        <div class="container">
+
+                            @if (item.imagensPostagens != null)
+                    {
+                        foreach (var itemImagem in item.imagensPostagens)
+                        {
+
+                                    <div class="row">
+
+                                        @*<div class="col-md-4 col-sm-3" style="height:20px;"> </div>
+
+                                            <div class="col-md-4 col-sm-3" style="height:20px;">
+
+                                            </div>*@
+
+                                        <div class="col-md-12 col-sm-12 fundo-bloco">
+                                            <img class="imagem" src="data:image;base64, @System.Convert.ToBase64String(itemImagem.imagem)">
+
+                                        </div>
+
+                                    </div>
+
+                                }
+                            }
+
+
+
+                        </div>
+
+                        <div class="textoPost" >   <p> @Html.DisplayFor(modelItem => item.corpo) </p>  </div>
+
+                        <div class="rodapePost">
+
+                            <hr class="hr-rodape">
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                }
+            </div>
+
+
+
+
+
+
+
+            Página @Model.PageNumber de @Model.PageCount
+            @Html.PagedListPager(Model, Page => Url.Action("ListarPostagens", new { pagina = Page }))
+        </body>
+    </html>

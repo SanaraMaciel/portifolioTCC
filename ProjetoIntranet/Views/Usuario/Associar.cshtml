@@ -1,0 +1,99 @@
+﻿@model ProjetoIntranet.Models.Entity.Usuario
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "Associar";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper selected(string c, string culture, string View = "Associar")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "Usuario", new { View = "Associar" }))
+    {
+
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+<h2>@Recursos.Resources.AssociarUsuario</h2>
+
+
+
+<div>
+    @using (Html.BeginForm("Associar", "Usuario", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary()
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@Recursos.Resources.EscolhaUsuario</h3>
+            </div>
+            <div class="panel-body">
+
+
+                @Html.Label(Recursos.Resources.Usuario, new { @for = "Usuario" })
+                @Html.DropDownList("Lista", (IEnumerable<SelectListItem>)ViewBag.users, "Selecione um Usuário", new { @onchange= "verificar()" })
+                <br>
+                <span class="text-danger"> @ViewBag.msg1 </span>
+
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@Recursos.Resources.GruposExistentes</h3>
+            </div>
+            <div class="panel-body">
+
+
+                @foreach (var item in ViewBag.lista)
+                {
+                    <div class="input-group">
+
+                        <span class="checkbox">
+
+                            <label>
+                                <input type="checkbox" name="check" id="check" value="@item.Value" /><b>@item.Text</b>
+                            </label>
+
+                        </span>
+
+                    </div>
+                    
+
+                }
+                <br>
+                <span class="text-danger"> @ViewBag.msg2 </span>
+            </div>
+        </div>
+
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="@Recursos.Resources.Salvar" class="btn btn-success" />
+                    <input type="reset" value="@Recursos.Resources.Cancelar" class="btn btn-danger" /><br>
+                </div>
+            </div>
+    }
+</div>
+
+
+

@@ -1,0 +1,522 @@
+﻿@model ProjetoIntranet.Models.Entity.MensagemEmail
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = Recursos.Resources.HOME;
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+@helper selected(string c, string culture)
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <title> LOREM IPSUM LTDA</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/fonts/svg")
+</head>
+<body>
+    <div class="layout">
+        <div class="container-fluid">
+
+         
+                    <header id="cabecalho">
+
+                        <div class="row">
+
+                            <br>
+
+
+                            <div class="row">
+                                @using (Html.BeginForm("SetCulture", "Home"))
+                                {
+
+                                    <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+
+                                        <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit" >
+
+                                            <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues"  type="submit"/>
+
+
+                                        </button>
+
+                                        <button href="" id="en-us" value="en-us" selected("en-us", culture)  type="submit" name="culture" >
+                                            <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+
+                                        </button>
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="row">
+
+                                <div id="div-logo" class="col-md-6 col-sm-6 col-lg-4">
+
+
+                                    <img id="logo" src="~/Resources/Logo-Negativada.png" alt="logo fênix" title="Lorem">
+
+
+                                </div>
+
+
+                                <div class="col-md-6  col-sm-6 col-lg-6 col-xs-6">
+
+                                    <button id="botao-itens-menubar" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse">
+
+                                        <span id="icon-btn-lista" class="glyphicon glyphicon-th-list"></span>
+
+
+                                    </button>
+
+                                    <div id="list-links" class="navbar-collapse collapse">
+
+                                        <ul id="ul-links" class="nav">
+                                            <li><a href="#" id="home" class="links"><p> HOME </p></a> </li>
+                                            <li><a href="#historia" id="hist" class="links"><p>@Recursos.Resources.HISTÓRIA </p></a> </li>
+                                            <li><a href="#processos" id="proc" class="links"> <p>@Recursos.Resources.PROCESSOS </p></a> </li>
+                                            <li><a href="#tecnologia" id="tecn" class="links"> <p> @Recursos.Resources.TECNOLOGIA </p></a> </li>
+                                            <li><a href="#qualidade" id="qual" class="links"> <p> @Recursos.Resources.QUALIDADE </p></a> </li>
+                                            <li><a href="#localizacao" id="loca" class="links"> <p> @Recursos.Resources.LOCALIZAÇÃO </p></a> </li>
+                                            <li><a href="#contato" id="cont" class="links"> <p>@Recursos.Resources.CONTATO </p></a> </li>
+                                            <li class="toggle-contraste links"><a class="toggle-contraste" href="#" accesskey="6"> <p>@Recursos.Resources.ALTO @Recursos.Resources.CONTRASTE </p></a></li>
+                                            <li><a href="#entrar" class="links" data-toggle="modal" data-target="#loginModal"><p>@Recursos.Resources.ENTRAR </p></a> </li>
+
+                                        </ul>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </header>
+
+                    <div class="container-modal">
+
+
+                        <div class="modal fade" id="loginModal" role="dialog">
+                            <div class="modal-dialog">
+
+
+                                <div class="modal-content" style="width:50%;">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h2 class="h2-format">@Recursos.Resources.BemVindo </h2>
+                                    </div>
+                                    <div class="modal-body ">
+
+                                        <div id="fundo-modal">
+
+
+
+                                            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                                            {
+
+                                                <span class="text-danger"> @ViewBag.LoginError </span><br>
+                                                <div class="form-group">
+
+                                                    @Html.Label(Recursos.Resources.LoginUsuario, new { @for = "txbUsuario" })<br>
+                                                    @Html.TextBox("nomeUsuario", "", new { id = "txbUsuario", @class = "form-control" })<br><br>
+
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                    @Html.Label(Recursos.Resources.Senha, new { @for = "txbSenha" })<br>
+                                                    @Html.Password("Senha", "", new { id = "txbSenha", @class = "form-control" })<br><br>
+
+                                                </div>
+
+
+                                                <button id="btn-logar" type="submit" class="btn btn-success">
+
+                                                    <span class="glyphicon glyphicon-off"> @Recursos.Resources.ENTRAR </span>
+
+                                                </button>
+
+                                            }
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div id="bloco-carrossel">
+
+                            <div id="carrossel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000" data-pause="none">
+
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="~/Resources/Foto-Home-01.jpg" alt="slid0" class="img-responsive">
+                                        <div class="carousel-caption">
+
+                                        </div>
+
+                                        <div class="text-slider">
+                                            <div class="carousel-content">
+                                                <h3> Lorem ipsum dolor sit amet </h3>
+                                                <hr>
+                                                <h6>consectetur adipiscing elit</h6>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="item">
+                                        <img src="~/Resources/Foto-Home-02.jpg" alt="slid1" class="img-responsive">
+                                        <div class="carousel-caption"></div>
+
+                                        <div class="text-slider">
+                                            <div class="carousel-content">
+
+                                                <h3> Lorem ipsum dolor sit amet </h3>
+                                                <hr>
+                                                <h6>Ut sit amet dui quis magna cursus</h6>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="item">
+                                        <img src="~/Resources/Foto-Home-03.jpg" alt="slid2" class="img-responsive">
+                                        <div class="carousel-caption"></div>
+                                    </div>
+
+
+
+                                </div>
+                                <!-- Controls -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <br>
+                        <br>
+                        <br>
+
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="fundo-bloco">
+
+                            <div id="div-titulo1">
+
+                                <h2 id="titulo1-h2" class="h2-format"> @Recursos.Resources.Titulo1  </h2>
+
+                            </div>
+
+                            <hr>
+
+                            <div id="div-texto1">
+
+                                <p id="texto1-paragrafo1" class="textos-format">
+                                    @Recursos.Resources.Texto1
+                                 
+                                </p>
+
+                            </div>
+
+
+                            <div id="div-imagens-b1">
+
+
+                                <img id="imagem1-b1" src="~/Resources/Security1.png" alt="imagem1">
+                                <img id="imagem2-b1" src="~/Resources/Security2.jpg" alt="imagem2">
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="fundo-bloco">
+
+
+                            <div class="row">
+
+                                <div class="col-md-6  col-sm-6 col-lg-6">
+
+
+                                    <div id="div-titulo2">
+
+                                        <h2 id="titulo2-h2" class="h2-format"> @Recursos.Resources.Titulo2  </h2>
+
+                                    </div>
+                                    <hr>
+                                    <div id="div-texto2">
+                                        
+
+                                        <p id="texto2-paragrafo2" class="textos-format">
+
+                                            @Recursos.Resources.Texto2
+                                            
+
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6  col-sm-6 col-lg-6">
+
+
+                                    <div id="div-imagens-b2">
+
+                                        <img id="imagem1-b2" src="~/Resources/Security3.jpg" alt="imagem3">
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+
+
+                    <div class="row">
+
+
+                        <div class="fundo-bloco">
+
+                            <div id="div-titulo3">
+
+                                <h2 id="titulo3-h2" class="h2-format"> @Recursos.Resources.Titulo3 </h2>
+
+
+                            </div>
+                            <hr>
+                            <div id="div-texto3">
+
+                                <p id="texto3-paragrafo1" class="textos-format">
+
+                                    <ul id="txt3" class="textos-format">
+                                       
+                                        <li> @Recursos.Resources.Texto3a </li>
+                                        <li> @Recursos.Resources.Texto3b </li>
+                                        <li> @Recursos.Resources.Texto3c </li>
+                                        <li> @Recursos.Resources.Texto3d </li>
+                                        <li> @Recursos.Resources.Texto3e </li>
+
+                                    </ul>
+
+
+                                </p>
+
+                            </div>
+
+
+                            <div id="div-imagens-b3">
+
+
+                                <img id="imagem1-b3" src="~/Resources/Security4.jpg" alt="imagem4">
+                                <img id="imagem2-b3" src="~/Resources/Security5.jpg" alt="imagem5">
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="fundo-bloco">
+
+                            <div id="div-titulo4">
+
+                                <h2 id="titulo4-h2" class="h2-format"> @Recursos.Resources.Titulo4  </h2>
+                                <hr>
+
+                            </div>
+
+                            <div id="div-texto4">
+
+                                <p id="texto4-paragrafo1" class="textos-format">
+
+                                    @Recursos.Resources.Texto4
+                                    
+                                    <br><br>
+
+                                    @Recursos.Resources.Texto5a @Recursos.Resources.Texto5b                                    
+                                    
+                                    @Recursos.Resources.Texto5c @Recursos.Resources.Texto5d
+                                    
+                                    @Recursos.Resources.Texto5e @Recursos.Resources.Texto5f
+
+                                    @Recursos.Resources.Texto5g                                
+                                    
+                                   
+
+
+                                </p>
+
+                            </div>
+
+
+                            <div id="div-imagens-b4">
+
+
+                                <img id="imagem1-b4" src="~/Resources/Security6.jpg" alt="imagem6">
+                                <img id="imagem2-b4" src="~/Resources/SISTEMA-DE-GESTÃO02-e1468951190875.png" alt="imagem7">
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+
+
+                    <div class="row">
+
+
+                        <div class="fundo-bloco">
+
+                            <div id="div-titulo5">
+
+                                <h2 id="titulo5-h2" class="h2-format"> @Recursos.Resources.Titulo5  </h2>
+                                <hr>
+
+                            </div>
+
+                            <div id="div-texto5">
+
+                                <p id="texto5-paragrafo1" class="textos-format">
+
+                                    @Recursos.Resources.Texto6
+                                    
+                                  
+
+                                </p>
+
+                            </div>
+
+
+                            <div id="div-imagens-b5" class="row">
+                                <br>
+                                <img id="imagem1-b5" src="~/Resources/Mapa1.gif" alt="imagem8">
+
+                                
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+
+
+                        <div class="footer">
+                            <footer id="bloco-footer">
+
+
+                                @Html.Partial("_rodape")
+
+                            </footer>
+
+                        </div>
+
+                    </div>
+
+            </div>
+
+        </div>
+
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @Scripts.Render("~/bundles/Extranet")
+                @Scripts.Render("~/bundles/Mask")
+
+            </body>
+
+        </html>

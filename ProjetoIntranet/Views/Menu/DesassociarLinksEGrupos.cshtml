@@ -1,0 +1,125 @@
+﻿@model ProjetoIntranet.MV.MVlinkEGrupo
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "DesassociarLinksEGrupos";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@helper selected(string c, string culture, string View = "DesassociarLinksEGrupos")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "Menu", new { View = "DesassociarLinksEGrupos" }))
+    {
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+<h2>@Recursos.Resources.DesassociarLinks</h2>
+
+<div class="row">
+    <div class="container">
+
+        <div class="container">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="text-align:center;">@Recursos.Resources.Grupos</h3>
+                </div>
+
+                <div class="panel-body" style="overflow-y:scroll;overflow-x:scroll;width:100%;height:20%">
+
+
+
+                    <div class="container ">
+
+
+                        @Html.DropDownList("ListaGruposDesassociar", Model.ListaDeGrupos, "Selecione um grupo")
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+ </div>
+
+<div class="row">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="container">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="text-align:center">@Recursos.Resources.Links</h3>
+                    </div>
+                    <div class="panel-body" style="overflow-y:scroll;overflow-x:scroll;width:100%;height:20%">
+
+                     
+                        <div id="tabelaDeLinks" class="container">
+
+
+                           @Html.Partial("_PartialLista")
+                       
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="modal fade" id="feedbackDesaAssociarGrupoLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    <span class="sr-only">Success:</span>
+                    <b>@Recursos.Resources.AssociaçãoDesfeita</b>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+﻿@model IEnumerable<ProjetoIntranet.Models.Entity.CadastroMenu >
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "EditarMenu";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper selected(string c, string culture, string View = "EditarMenu")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "Menu", new { View = "EditarMenu" }))
+    {
+
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+<h2>@Recursos.Resources.EditarMenu</h2>
+
+<div class="row">
+
+
+    <div class="container">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="text-align:center;">@Recursos.Resources.LinksCadastrados</h3>
+            </div>
+            <div class="panel-body" style="overflow-y:scroll;overflow-x:scroll;width:100%;height:20%">
+
+                <table class="table">
+                    <tr>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.url)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ordem)
+                        </th>
+                        <th>
+                           @Html.DisplayNameFor(model => model.codigoPai)
+                        </th>
+                        <th>
+                           
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.url)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nome)
+                            </td>
+                            <td width="20">
+                                @Html.DisplayFor(modelItem => item.ordem)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.codigoPai)
+                            </td>
+                            <td>
+                                
+                                <button id="@item.id" name="btn_filho" type="button" title="@Recursos.Resources.CliqueAdicionarFilhos" class="btn btn-warning glyphicon glyphicon-plus botao">@Recursos.Resources.Filhos</button>
+
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+            </div>
+        </div>
+
+        <button id="botao_enviar" class="btn btn-success" > @Recursos.Resources.Salvar</button>
+
+    </div>
+
+</div>
+
+<br>
+
+<div class="row">
+
+    <div class="container">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h3 class="panel-title" style="text-align:center;">@Recursos.Resources.ListaFilhos<label id="idPai"></label> </h3>
+            </div>
+
+            <div class="panel-body" style="overflow-x:scroll">
+
+                <table id="tabela" class="table">
+
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.url)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ordem)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.codigoPai)
+                        </th>
+                        <th>
+
+                            @Html.DisplayName("É Filho!")
+
+                        </th>
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+            <button id="btn_confirm" type="button" class="btn btn-warning">@Recursos.Resources.Associar</button>
+            <button id="btn_cancelar_associacao" type="button" class="btn btn-danger">@Recursos.Resources.Cancelar</button>
+           </div>
+       </div>
+</div>
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+            
+            
+            <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <b>@Recursos.Resources.AssociacaoFeitaSucesso</b>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+           
+
+            <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <b>@Recursos.Resources.NenhumLink</b>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+           
+
+            <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <b>@Recursos.Resources.SalvoSucesso</b>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+           
+            <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <b>@Recursos.Resources.ErroLink</b>
+            </div>
+
+
+        </div>
+    </div>
+</div>

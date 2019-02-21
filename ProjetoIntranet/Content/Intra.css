@@ -1,0 +1,1622 @@
+﻿@media only screen and (min-width: 1025px) {
+        
+    body {
+        overflow-x: hidden;
+    }
+
+    .validation-summary-errors  {
+        color: red;
+    }
+
+    .cabecalho {
+
+        background-color:rgba(0,0,0,1);
+
+    }
+
+    /*------------area da  tela listar curriculos ----------------*/
+    
+    #form-area{
+
+        margin-left:10px;
+    }
+
+    #btn-submit-areas{
+
+        margin-top:23px;
+        margin-left:10px;
+
+    }
+
+    
+   
+    #form-group-data-inicio{
+
+        width:30%;
+
+    }
+
+    #form-group-data-fim{
+        width: 30%;
+    }
+
+    #btn-submit-datas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+    #form-group-area{
+
+        width:50%;
+    }
+    /*-------------------------------------------------*/
+
+    /* --------------------------- post its ---------*/
+
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: x-large;
+        font-style: oblique;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .corpo {
+        font-family: sans-serif;
+        font-size: medium;
+        font-style: normal;
+        color: black;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .item branding {
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .imagem {
+        width: 240px;
+        height: 100px;
+        position: relative;
+        left: 8px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        display: block;
+        margin-left: 35%;
+    }
+
+
+
+    .textPost {
+        background: transparent;
+        color: black;
+        resize: none;
+        border: 0 none;
+        width: 100%;
+        font-size: 10px;
+        outline: none;
+        height: 100%;
+        position: relative;
+        overflow-y: hidden;
+        margin-top: 5px;
+    }
+
+    .mensagem {
+        background-color: whitesmoke;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: darkgrey;
+        margin-bottom: 15px;
+    }
+
+    .hr-rodape {
+        height: 18px;
+        background-color: #0b7239;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 0px;
+    }
+
+    .abaEsquerda {
+
+        height:25px;
+        background-color:black;
+        border-top-left-radius:10px;
+    }
+
+
+    .abaDireita {
+        height: 25px;
+        background-color: black;
+        border-top-right-radius: 10px;
+    }
+
+
+
+    /*-------------------------------------------------*/
+
+
+    /* --------------------------- view listar postagens ---------*/
+    .btnPesqDataPost {
+
+        margin-top:24px; 
+
+        margin-left:16px;
+    }
+
+    /*-------------------------------------------------*/
+
+    
+
+    /* --------------------------- menu dinamico ---------*/
+
+
+
+
+
+
+    .tree-menu ul {
+        list-style: none;
+    }
+
+    .tree-menu > ul {
+        padding: 0;
+    }
+
+    .tree-menu a {
+        display: block;
+        /*vertical-align: middle;*/
+        text-decoration: none;
+        padding: 6px;
+        background-color: #efefef;
+        border-radius: 4px;
+        margin-bottom: 1px;
+        /*color: #002888;*/
+        color: black;
+        -moz-transition: background-color 0.25s linear;
+        -webkit-transition: background-color 0.25s linear;
+        -o-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+        -moz-transition-delay: 0.15s;
+        -webkit-transition-delay: 0.15s;
+        -o-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+    }
+
+        .tree-menu a:hover {
+            color: #0b7239;
+            -moz-transition: background-color 0.1s linear;
+            -webkit-transition: background-color 0.1s linear;
+            -o-transition: background-color 0.1s linear;
+            transition: background-color 0.1s linear;
+        }
+
+        .tree-menu .active > a:hover,
+        .tree-menu .selected > a,
+        .tree-menu a:hover {
+            background-color: #c6cdde;
+        }
+
+    .tree-menu .selected > a {
+        color: #f53d3e;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .tree-menu .active > a {
+        background-color: #e1e3e9;
+    }
+
+    .tree-menu .closed > a,
+    .tree-menu .opened > a {
+        padding-left: 24px;
+        background-position: 4px 8px;
+        background-repeat: no-repeat;
+    }
+
+    .tree-menu .closed > a {
+        background-image: url(../img/icon-expand.gif);
+    }
+
+    .tree-menu .opened > a {
+        background-image: url(../img/icon-collapse.gif);
+    }
+
+
+
+
+
+    #container-menu-dinamico {
+
+        margin-top: 20%;
+        margin-left: 5%;
+
+      background-color:transparent;
+
+    }
+
+      .fundo-nav {
+        background-image: url(../Resources/Componentes-01.jpg);
+        background-size: cover;
+    }
+
+
+    #div-login {
+
+       padding-left:60%;
+
+
+    }
+
+    
+
+    .over-fundo-nav {
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    #logo-intra {
+        width: 50%;
+        height: 50%;
+        z-index: 30;
+        margin-left: 14%;
+    }
+
+    .div-logo {
+        width: 350px;
+        
+    }
+
+    .bloco-footer {
+        background-color: #0b7239;
+        bottom:0px;
+        width:100%;
+        position:fixed;
+      
+    }
+   
+    .ajuda{
+
+        width:30%;
+        height:30%;
+        
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .validation-summary-errors {
+        color: red;
+    }
+
+    .cabecalho {
+        background-color: rgba(0,0,0,1);
+    }
+
+    /*------------area da  tela listar curriculos ----------------*/
+
+    #form-area {
+        margin-left: 10px;
+    }
+
+    #btn-submit-areas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+
+
+    #form-group-data-inicio {
+        width: 30%;
+    }
+
+    #form-group-data-fim {
+        width: 30%;
+    }
+
+    #btn-submit-datas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+    #form-group-area {
+        width: 50%;
+    }
+    /*-------------------------------------------------*/
+
+    /* --------------------------- post its ---------*/
+
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: x-large;
+        font-style: oblique;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .corpo {
+        font-family: sans-serif;
+        font-size: medium;
+        font-style: normal;
+        color: black;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .item branding {
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .imagem {
+        width: 240px;
+        height: 100px;
+        position: relative;
+        left: 8px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        display: block;
+        margin-left: 20%;
+    }
+
+
+
+    .textPost {
+        background: transparent;
+        color: black;
+        resize: none;
+        border: 0 none;
+        width: 100%;
+        font-size: 10px;
+        outline: none;
+        height: 100%;
+        position: relative;
+        overflow-y: hidden;
+        margin-top: 5px;
+    }
+
+    .mensagem {
+        background-color: whitesmoke;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: darkgrey;
+        margin-bottom: 15px;
+        
+    }
+
+    .hr-rodape {
+        height: 18px;
+        background-color: #0b7239;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 0px;
+    }
+
+    .abaEsquerda {
+        height: 25px;
+        background-color: black;
+        border-top-left-radius: 10px;
+    }
+
+
+    .abaDireita {
+        height: 25px;
+        background-color: black;
+        border-top-right-radius: 10px;
+    }
+
+
+
+    /*-------------------------------------------------*/
+
+
+    /* --------------------------- view listar postagens ---------*/
+    .btnPesqDataPost {
+        margin-top: 24px;
+        margin-left: 16px;
+    }
+
+    /*-------------------------------------------------*/
+
+
+
+    /* --------------------------- menu dinamico ---------*/
+
+
+
+
+
+
+    .tree-menu ul {
+        list-style: none;
+    }
+
+    .tree-menu > ul {
+        padding: 0;
+    }
+
+    .tree-menu a {
+        display: block;
+        /*vertical-align: middle;*/
+        text-decoration: none;
+        padding: 6px;
+        background-color: #efefef;
+        border-radius: 4px;
+        margin-bottom: 1px;
+        /*color: #002888;*/
+        color: black;
+        -moz-transition: background-color 0.25s linear;
+        -webkit-transition: background-color 0.25s linear;
+        -o-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+        -moz-transition-delay: 0.15s;
+        -webkit-transition-delay: 0.15s;
+        -o-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+    }
+
+        .tree-menu a:hover {
+            color: #0b7239;
+            -moz-transition: background-color 0.1s linear;
+            -webkit-transition: background-color 0.1s linear;
+            -o-transition: background-color 0.1s linear;
+            transition: background-color 0.1s linear;
+        }
+
+        .tree-menu .active > a:hover,
+        .tree-menu .selected > a,
+        .tree-menu a:hover {
+            background-color: #c6cdde;
+        }
+
+    .tree-menu .selected > a {
+        color: #f53d3e;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .tree-menu .active > a {
+        background-color: #e1e3e9;
+    }
+
+    .tree-menu .closed > a,
+    .tree-menu .opened > a {
+        padding-left: 24px;
+        background-position: 4px 8px;
+        background-repeat: no-repeat;
+    }
+
+    .tree-menu .closed > a {
+        background-image: url(../img/icon-expand.gif);
+    }
+
+    .tree-menu .opened > a {
+        background-image: url(../img/icon-collapse.gif);
+    }
+
+
+
+
+
+    #container-menu-dinamico {
+        margin-top: 20%;
+        margin-left: 5%;
+        background-color: transparent;
+    }
+
+    .fundo-nav {
+        background-image: url(../Resources/Componentes-01.jpg);
+        background-size: cover;
+    }
+
+
+    #div-login {
+        padding-left: 60%;
+    }
+
+
+
+    .over-fundo-nav {
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    #logo-intra {
+        width: 50%;
+        height: 50%;
+        z-index: 30;
+        margin-left: 14%;
+    }
+
+    .div-logo {
+        width: 350px;
+    }
+
+    .bloco-footer {
+        background-color: #0b7239;
+        bottom: 0px;
+        width: 100%;
+        position: fixed;
+    }
+
+    .ajuda {
+        width: 30%;
+        height: 30%;
+    }
+
+
+}
+
+@media only screen and (min-width: 701px) and (max-width: 767px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .validation-summary-errors {
+        color: red;
+    }
+
+    .cabecalho {
+        background-color: rgba(0,0,0,1);
+    }
+
+    /*------------area da  tela listar curriculos ----------------*/
+
+    #form-area {
+        margin-left: 10px;
+    }
+
+    #btn-submit-areas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+
+
+    #form-group-data-inicio {
+        width: 30%;
+    }
+
+    #form-group-data-fim {
+        width: 30%;
+    }
+
+    #btn-submit-datas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+    #form-group-area {
+        width: 50%;
+    }
+    /*-------------------------------------------------*/
+
+    /* --------------------------- post its ---------*/
+
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: x-large;
+        font-style: oblique;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .corpo {
+        font-family: sans-serif;
+        font-size: medium;
+        font-style: normal;
+        color: black;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .item branding {
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .imagem {
+        width: 240px;
+        height: 100px;
+        position: relative;
+        left: 8px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        display: block;
+        margin-left: 35%;
+    }
+
+
+
+    .textPost {
+        background: transparent;
+        color: black;
+        resize: none;
+        border: 0 none;
+        width: 100%;
+        font-size: 10px;
+        outline: none;
+        height: 100%;
+        position: relative;
+        overflow-y: hidden;
+        margin-top: 5px;
+    }
+
+    .mensagem {
+        background-color: whitesmoke;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: darkgrey;
+        margin-bottom: 15px;
+    }
+
+    .hr-rodape {
+        height: 18px;
+        background-color: #0b7239;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 0px;
+    }
+
+    .abaEsquerda {
+        height: 25px;
+        background-color: black;
+        border-top-left-radius: 10px;
+    }
+
+
+    .abaDireita {
+        height: 25px;
+        background-color: black;
+        border-top-right-radius: 10px;
+    }
+
+
+
+    /*-------------------------------------------------*/
+
+
+    /* --------------------------- view listar postagens ---------*/
+    .btnPesqDataPost {
+        margin-top: 24px;
+        margin-left: 16px;
+    }
+
+    /*-------------------------------------------------*/
+
+
+
+    /* --------------------------- menu dinamico ---------*/
+
+
+
+
+
+
+    .tree-menu ul {
+        list-style: none;
+    }
+
+    .tree-menu > ul {
+        padding: 0;
+    }
+
+    .tree-menu a {
+        display: block;
+        /*vertical-align: middle;*/
+        text-decoration: none;
+        padding: 6px;
+        background-color: #efefef;
+        border-radius: 4px;
+        margin-bottom: 1px;
+        /*color: #002888;*/
+        color: black;
+        -moz-transition: background-color 0.25s linear;
+        -webkit-transition: background-color 0.25s linear;
+        -o-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+        -moz-transition-delay: 0.15s;
+        -webkit-transition-delay: 0.15s;
+        -o-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+    }
+
+        .tree-menu a:hover {
+            color: #0b7239;
+            -moz-transition: background-color 0.1s linear;
+            -webkit-transition: background-color 0.1s linear;
+            -o-transition: background-color 0.1s linear;
+            transition: background-color 0.1s linear;
+        }
+
+        .tree-menu .active > a:hover,
+        .tree-menu .selected > a,
+        .tree-menu a:hover {
+            background-color: #c6cdde;
+        }
+
+    .tree-menu .selected > a {
+        color: #f53d3e;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .tree-menu .active > a {
+        background-color: #e1e3e9;
+    }
+
+    .tree-menu .closed > a,
+    .tree-menu .opened > a {
+        padding-left: 24px;
+        background-position: 4px 8px;
+        background-repeat: no-repeat;
+    }
+
+    .tree-menu .closed > a {
+        background-image: url(../img/icon-expand.gif);
+    }
+
+    .tree-menu .opened > a {
+        background-image: url(../img/icon-collapse.gif);
+    }
+
+
+
+
+
+    #container-menu-dinamico {
+        margin-top: 20%;
+        margin-left: 5%;
+        background-color: transparent;
+    }
+
+    .fundo-nav {
+        background-image: url(../Resources/Componentes-01.jpg);
+        background-size: cover;
+    }
+
+
+    #div-login {
+        padding-left: 60%;
+    }
+
+
+
+    .over-fundo-nav {
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    #logo-intra {
+        width: 50%;
+        height: 50%;
+        z-index: 30;
+        margin-left: 14%;
+    }
+
+    .div-logo {
+        width: 350px;
+    }
+
+    .bloco-footer {
+        background-color: #0b7239;
+        bottom: 0px;
+        width: 100%;
+        position: fixed;
+    }
+
+    .ajuda {
+        width: 30%;
+        height: 30%;
+    }
+
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .validation-summary-errors {
+        color: red;
+    }
+
+    .cabecalho {
+        background-color: rgba(0,0,0,1);
+    }
+
+    /*------------area da  tela listar curriculos ----------------*/
+
+    #form-area {
+        margin-left: 10px;
+    }
+
+    #btn-submit-areas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+
+
+    #form-group-data-inicio {
+        width: 30%;
+    }
+
+    #form-group-data-fim {
+        width: 30%;
+    }
+
+    #btn-submit-datas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+    #form-group-area {
+        width: 50%;
+    }
+    /*-------------------------------------------------*/
+
+    /* --------------------------- post its ---------*/
+
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: x-large;
+        font-style: oblique;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .corpo {
+        font-family: sans-serif;
+        font-size: medium;
+        font-style: normal;
+        color: black;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .item branding {
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .imagem {
+        width: 240px;
+        height: 100px;
+        position: relative;
+        left: 8px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        display: block;
+        margin-left: 15%;
+    }
+
+
+
+    .textPost {
+        background: transparent;
+        color: black;
+        resize: none;
+        border: 0 none;
+        width: 100%;
+        font-size: 10px;
+        outline: none;
+        height: 100%;
+        position: relative;
+        overflow-y: hidden;
+        margin-top: 5px;
+    }
+
+    .mensagem {
+        background-color: whitesmoke;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: darkgrey;
+        margin-bottom: 15px;
+    }
+
+    .hr-rodape {
+        height: 18px;
+        background-color: #0b7239;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 0px;
+    }
+
+    .abaEsquerda {
+        height: 25px;
+        background-color: black;
+        border-top-left-radius: 10px;
+    }
+
+
+    .abaDireita {
+        height: 25px;
+        background-color: black;
+        border-top-right-radius: 10px;
+    }
+
+
+
+    /*-------------------------------------------------*/
+
+
+    /* --------------------------- view listar postagens ---------*/
+    .btnPesqDataPost {
+        margin-top: 24px;
+        margin-left: 16px;
+    }
+
+    /*-------------------------------------------------*/
+
+
+
+    /* --------------------------- menu dinamico ---------*/
+
+
+
+
+
+
+    .tree-menu ul {
+        list-style: none;
+    }
+
+    .tree-menu > ul {
+        padding: 0;
+    }
+
+    .tree-menu a {
+        display: block;
+        /*vertical-align: middle;*/
+        text-decoration: none;
+        padding: 6px;
+        background-color: #efefef;
+        border-radius: 4px;
+        margin-bottom: 1px;
+        /*color: #002888;*/
+        color: black;
+        -moz-transition: background-color 0.25s linear;
+        -webkit-transition: background-color 0.25s linear;
+        -o-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+        -moz-transition-delay: 0.15s;
+        -webkit-transition-delay: 0.15s;
+        -o-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+    }
+
+        .tree-menu a:hover {
+            color: #0b7239;
+            -moz-transition: background-color 0.1s linear;
+            -webkit-transition: background-color 0.1s linear;
+            -o-transition: background-color 0.1s linear;
+            transition: background-color 0.1s linear;
+        }
+
+        .tree-menu .active > a:hover,
+        .tree-menu .selected > a,
+        .tree-menu a:hover {
+            background-color: #c6cdde;
+        }
+
+    .tree-menu .selected > a {
+        color: #f53d3e;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .tree-menu .active > a {
+        background-color: #e1e3e9;
+    }
+
+    .tree-menu .closed > a,
+    .tree-menu .opened > a {
+        padding-left: 24px;
+        background-position: 4px 8px;
+        background-repeat: no-repeat;
+    }
+
+    .tree-menu .closed > a {
+        background-image: url(../img/icon-expand.gif);
+    }
+
+    .tree-menu .opened > a {
+        background-image: url(../img/icon-collapse.gif);
+    }
+
+
+
+
+
+    #container-menu-dinamico {
+        margin-top: 20%;
+        margin-left: 5%;
+        background-color: transparent;
+    }
+
+    .fundo-nav {
+        background-image: url(../Resources/Componentes-01.jpg);
+        background-size: cover;
+    }
+
+
+    #div-login {
+        padding-left: 60%;
+    }
+
+
+
+    .over-fundo-nav {
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    #logo-intra {
+        width: 50%;
+        height: 50%;
+        z-index: 30;
+        margin-left: 14%;
+    }
+
+    .div-logo {
+        width: 350px;
+    }
+
+    .bloco-footer {
+        background-color: #0b7239;
+        bottom: 0px;
+        width: 100%;
+        position: fixed;
+    }
+
+    .ajuda {
+        width: 30%;
+        height: 30%;
+    }
+
+}
+
+@media only screen and (min-width: 1px) and (max-width: 480px) {
+
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .validation-summary-errors {
+        color: red;
+    }
+
+    .cabecalho {
+        background-color: rgba(0,0,0,1);
+    }
+
+    /*------------area da  tela listar curriculos ----------------*/
+
+    #form-area {
+        margin-left: 10px;
+    }
+
+    #btn-submit-areas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+
+
+    #form-group-data-inicio {
+        width: 30%;
+    }
+
+    #form-group-data-fim {
+        width: 30%;
+    }
+
+    #btn-submit-datas {
+        margin-top: 23px;
+        margin-left: 10px;
+    }
+
+    #form-group-area {
+        width: 50%;
+    }
+    /*-------------------------------------------------*/
+
+    /* --------------------------- post its ---------*/
+
+
+    .titulo {
+        font-family: sans-serif;
+        font-size: x-large;
+        font-style: oblique;
+        color: black;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .corpo {
+        font-family: sans-serif;
+        font-size: medium;
+        font-style: normal;
+        color: black;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .item branding {
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .imagem {
+        width: 140px;
+        height: 100px;
+        position: relative;
+        left: 8px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        display: block;
+       
+    }
+
+
+    .toggle-contraste {
+
+        right:80%;
+
+    }
+
+
+    .textPost {
+        background: transparent;
+        color: black;
+        resize: none;
+        border: 0 none;
+        width: 100%;
+        font-size: 10px;
+        outline: none;
+        height: 100%;
+        position: relative;
+        overflow-y: hidden;
+        margin-top: 5px;
+    }
+
+    .mensagem {
+        background-color: whitesmoke;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: darkgrey;
+        margin-bottom: 15px;
+    }
+
+    .hr-rodape {
+        height: 18px;
+        background-color: #0b7239;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 0px;
+    }
+
+    .abaEsquerda {
+        height: 25px;
+        background-color: black;
+        border-top-left-radius: 10px;
+    }
+
+
+    .abaDireita {
+        height: 25px;
+        background-color: black;
+        border-top-right-radius: 10px;
+    }
+
+
+
+    /*-------------------------------------------------*/
+
+
+    /* --------------------------- view listar postagens ---------*/
+    .btnPesqDataPost {
+        margin-top: 24px;
+        margin-left: 16px;
+    }
+
+    /*-------------------------------------------------*/
+
+
+
+    /* --------------------------- menu dinamico ---------*/
+
+
+
+
+
+
+    .tree-menu ul {
+        list-style: none;
+    }
+
+    .tree-menu > ul {
+        padding: 0;
+    }
+
+    .tree-menu a {
+        display: block;
+        /*vertical-align: middle;*/
+        text-decoration: none;
+        padding: 6px;
+        background-color: #efefef;
+        border-radius: 4px;
+        margin-bottom: 1px;
+        /*color: #002888;*/
+        color: black;
+        -moz-transition: background-color 0.25s linear;
+        -webkit-transition: background-color 0.25s linear;
+        -o-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+        -moz-transition-delay: 0.15s;
+        -webkit-transition-delay: 0.15s;
+        -o-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+    }
+
+        .tree-menu a:hover {
+            color: #0b7239;
+            -moz-transition: background-color 0.1s linear;
+            -webkit-transition: background-color 0.1s linear;
+            -o-transition: background-color 0.1s linear;
+            transition: background-color 0.1s linear;
+        }
+
+        .tree-menu .active > a:hover,
+        .tree-menu .selected > a,
+        .tree-menu a:hover {
+            background-color: #c6cdde;
+        }
+
+    .tree-menu .selected > a {
+        color: #f53d3e;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .tree-menu .active > a {
+        background-color: #e1e3e9;
+    }
+
+    .tree-menu .closed > a,
+    .tree-menu .opened > a {
+        padding-left: 24px;
+        background-position: 4px 8px;
+        background-repeat: no-repeat;
+    }
+
+    .tree-menu .closed > a {
+        background-image: url(../img/icon-expand.gif);
+    }
+
+    .tree-menu .opened > a {
+        background-image: url(../img/icon-collapse.gif);
+    }
+
+
+
+
+
+    #container-menu-dinamico {
+        margin-top: 20%;
+        margin-left: 5%;
+        background-color: transparent;
+    }
+
+    .fundo-nav {
+        background-image: url(../Resources/Componentes-01.jpg);
+        background-size: cover;
+    }
+
+
+    #div-login {
+        padding-left: 60%;
+    }
+
+
+
+    .over-fundo-nav {
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    #logo-intra {
+        width: 50%;
+        height: 50%;
+        z-index: 30;
+        margin-left: 14%;
+    }
+
+    .div-logo {
+        width: 350px;
+    }
+
+    .bloco-footer {
+        background-color: #0b7239;
+        bottom: 0px;
+        width: 100%;
+        position: fixed;
+    }
+
+    .ajuda {
+        width: 30%;
+        height: 30%;
+    }
+
+}
+
+/* --- Alto contraste CSS*/
+.contraste {
+    background-color: #000000 !important;
+    color: #fff
+}
+
+    .contraste .textoPost{
+        color: white;
+    }
+
+    .contraste .tree-menu a ,  .contraste .abaEsquerda {
+        background-color: black;
+    }
+
+
+.contraste #container-menu-dinamico {
+        margin-top: 20%;
+        margin-left: 5%;
+        background-color: black;
+    }
+
+ .contraste .panel-heading, .contraste .mensagem {
+    background-color:black;
+    }
+
+.contraste .panel-body {
+        background-color: black;
+    }
+
+.contraste .panel-title , .contraste .titulo, .contraste .corpo{
+    color:white
+}
+
+    .contraste .btn-warning, .contraste .btn-danger, .contraste .btn-primary {
+        background-color: white;
+        color: black
+    }
+    
+ .contraste .bloco-footer {
+        background-color: black
+    }
+    
+.contraste .h2-format {
+        color: white;
+    }
+
+    .contraste .modal-content {
+        background-color: black
+    }
+
+
+    .contraste a {
+        color: yellow
+    }
+
+    .contraste .paragrafo {
+        color: #1a1a1a;
+    }
+
+    .contraste a:hover, .contraste a:focus {
+        color: yellow
+    }
+
+    .contraste h1 small,
+    .contraste h2 small, .contraste h3 small,
+    .contraste h4 small, .contraste h5 small,
+    .contraste h6 small {
+        color: #107221;
+    }
+
+    .contraste .fundo-bloco {
+        background-color: #000000;
+    }
+
+    .contraste .h2-format-footer {
+        color: #F1F1F1;
+    }
+
+    .contraste .textos-format-footer {
+        color: #F1F1F1;
+    }
+
+    .contraste .h2-format {
+        color: #F1F1F1;
+    }
+
+    .contraste .td {
+        color: #F1F1F1;
+        background-color: #000000
+    }
+
+    .contraste .th {
+        color: #F1F1F1;
+        background-color: #000000
+    }
+
+    .contraste .close {
+        background-color: white
+    }
+
+    .contraste .linha_cabecalho {
+        border-top: 4px solid #fff
+    }
+
+    .contraste .separador {
+        border-top: 4px solid #fff
+    }
+
+    .contraste .table_linha {
+        border-bottom: 1px solid #fff;
+    }
+
+    .contraste .table {
+        border-top: 1px solid #fff;
+    }
+
+    .contraste figure figcaption {
+        background-color: #1a1a1a
+    }
+
+    .contraste ::selection {
+        color: #111;
+        background-color: #fff
+    }
+
+    .contraste ::-moz-selection {
+        color: #111;
+        background-color: #fff
+    }
+
+    .contraste .form-control:-moz-placeholder {
+        color: #fff
+    }
+
+    .contraste .form-control::-moz-placeholder {
+        color: #fff
+    }
+
+    .contraste .form-control:-ms-input-placeholder {
+        color: #fff
+    }
+
+    .contraste .form-control::-webkit-input-placeholder {
+        color: #fff
+    }
+
+    .contraste .form-control:focus {
+        border-color: #fff;
+        outline: 0;
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,255,255,0.6);
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,255,255,0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,255,255,0.6)
+    }
+
+    .contraste .btn-default {
+        background-color: #262626;
+        color: #fff;
+        border-color: #1a1a1a
+    }
+
+        .contraste .btn-default:hover,
+        .contraste .btn-default:focus {
+            background-color: #1a1a1a
+        }
+
+    .contraste input {
+        background-color: #fff;
+        color: #000
+    }
+
+    .contraste header #accessibility a {
+        color: yellow
+    }
+
+        .contraste header #accessibility a:hover {
+            background: #FFF;
+            color: #000
+        }
+
+        .contraste header #accessibility a span {
+            background: #FFF;
+            color: #000
+        }
+
+    /* contraste para internacionalização*/
+    .contraste header #portal-siteactions a, .contraste header #language a {
+        color: yellow
+    }
+    /*fim contraste para internacionalização*/
+
+    .contraste .footer {
+        background-image: none;
+        background-color: #000000;
+    }
+
+    .contraste .btn-success {
+        background-color: white;
+        color: black;
+    }
+
+    .contraste footer h2,
+    .contraste footer h3,
+    .contraste footer h4 {
+        color: #fff
+    }
+
+    .contraste .caixa_texto {
+        background-color: #000;
+        color: #fff
+    }
+
+    .contraste container-fluid {
+        background-color: black;
+    }
+
+    .contraste .row fundo-nav {
+    background-color: black;
+    color: white
+    }
+
+#pt-Br {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+#en-us {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+  
+
+    /*fim do CSS Alto  contraste*/
+
+    /*CSS Postagens Principal*/
+
+
+    /*Fim do css Postagens principal*/

@@ -1,0 +1,293 @@
+﻿@model ProjetoIntranet.Models.Entity.Curriculo
+@Recursos.Resources.Culture
+
+@{
+    Layout = null;
+    ViewBag.Title = Recursos.Resources.Curriculo;
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+@helper selected(string c, string culture, string View = "Curriculo")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Curriculo -Fênix Indústria Eletrônica LTDA</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
+
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/Curriculo.css")
+    @Styles.Render("~/Content/css")
+
+
+</head>
+<body>
+    <div class="layout">
+        <div class=" container-fluid">
+
+
+            <div class="row">
+
+                <header id="cabecalhocv">
+
+                    <div class="row">
+
+                        <br>
+
+
+                        <div class="row">
+                            @using (Html.BeginForm("SetCulture", "Curriculo", "Curriculo"))
+                            {
+
+                                <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+
+                                    <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+
+                                        <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+
+                                    </button>
+
+                                    <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                                        <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+
+                                    </button>
+                                </div>
+                            }
+                        </div>
+
+
+
+
+
+
+
+                        <div class="row">
+
+                            <div id="div-logo" class="col-md-6 col-sm-6 col-lg-4">
+
+
+                                <img id="logo" src="~/Resources/Logo-Negativada.png" alt="imagem11">
+
+
+                            </div>
+
+
+                            <div class="col-md-6  col-sm-6 col-lg-6">
+
+                                <button id="botao-itens-menubar" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse">
+
+                                    <span id="icon-btn-lista" class="glyphicon glyphicon-th-list"></span>
+
+
+                                </button>
+                                <div id="list-links" class="navbar-collapse collapse">
+
+                                    <ul id="ul-links" class="nav ">
+                                        <li><a href="#" id="home" class="links"> HOME</a> </li>
+                                        <li><a href="#historia" id="hist" class="links">@Recursos.Resources.HISTÓRIA</a> </li>
+                                        <li><a href="#processos" id="proc" class="links"> @Recursos.Resources.PROCESSOS</a> </li>
+                                        <li><a href="#tecnologia" id="tecn" class="links"> @Recursos.Resources.TECNOLOGIA</a> </li>
+                                        <li><a href="#qualidade" id="qual" class="links"> @Recursos.Resources.QUALIDADE</a> </li>
+                                        <li><a href="#localizacao" id="loca" class="links"> @Recursos.Resources.LOCALIZAÇÃO</a> </li>
+                                        <li><a href="#contato" id="cont" class="links"> @Recursos.Resources.CONTATO</a> </li>
+                                        <li class="toggle-contraste"><a class="toggle-contraste" href="#" accesskey="6">@Recursos.Resources.ALTO @Recursos.Resources.CONTRASTE</a></li>
+                                        <li><a href="#entrar" class="links" data-toggle="modal" data-target="#loginModal">@Recursos.Resources.ENTRAR</a> </li>
+                                    </ul>
+
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="container-modal">
+
+
+                        <div class="modal fade" id="loginModal" role="dialog">
+                            <div class="modal-dialog">
+
+
+                                <div class="modal-content" style="width:50%;">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h2 class="h2-format"> Bem-Vindo </h2>
+                                    </div>
+                                    <div class="modal-body ">
+
+                                        <div id="fundo-modal">
+
+                                            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                                            {
+
+                                                <span class="text-danger"> @ViewBag.LoginError </span><br>
+                                                <div class="form-group">
+
+                                                    @Html.Label("Usuário: ", new { @for = "txbUsuario" })<br>
+                                                    @Html.TextBox("nomeUsuario", "", new { id = "txbUsuario", @class = "form-control" })<br><br>
+
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                    @Html.Label("Senha: ", new { @for = "txbSenha" })<br>
+                                                    @Html.Password("Senha", "", new { id = "txbSenha", @class = "form-control" })<br><br>
+
+                                                </div>
+
+
+                                                <button id="btn-logar" type="submit" class="btn btn-success">
+
+                                                    <span class="glyphicon glyphicon-off"> Entrar </span>
+
+                                                </button>
+
+                                            }
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </header>
+
+            </div>
+
+            <div class="fundo-bloco">
+                <h2 class="h2-format">Cadastro de Currículo </h2>
+                <hr>
+                <div class="container form-width ">
+                    @using (Html.BeginForm("Curriculo", "Curriculo", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-group" }))
+                    {
+                        @Html.ValidationSummary()
+                        @Html.AntiForgeryToken()
+
+                        @Html.Label("Nome:", new { @for = "nomecv" });
+                        @Html.TextBoxFor(m => m.nome, new { @class = "form-control", @id = "nomecv" });
+                        <br>
+
+                        @Html.Label("Sexo:", new { @for = "sexo" });
+                        @Html.DropDownListFor(m => m.genero, new[] { new SelectListItem { Text = "Masc", Value = "1" }, new SelectListItem { Text = "Fem", Value = "2" } }, "Selecione Sexo", new { @class = "form-control", @id = "sexo" });
+                        <br>
+
+                        @Html.Label("EstadoCivil: ", new { @for = "estado" });
+                        @Html.DropDownList("estado", (IEnumerable<SelectListItem>)ViewBag.list, "escolha", new { @class = "form-control", @id = "estado" });
+                        <br>
+
+                        @Html.Label("Data Nascimento: ", new { @for = "nasc" });
+                        @Html.TextBoxFor(m => m.dataNascimento, new { @class = "form-control", @id = "nasc", @data_mask = "00/00/0000", @placeholder = "Digite somente numeros" });
+                        <br>
+                        @Html.Label("Telefone: ", new { @for = "tel" });
+                        @Html.TextBoxFor(m => m.telefoneFixo, new { @class = "form-control", @id = "tel", @data_mask = "(00)0000-0000", @placeholder = "Digite somente numeros" });
+                        <BR>
+                        @Html.Label("Celular: ", new { @for = "cel" });
+                        @Html.TextBoxFor(m => m.telefoneCelular, new { @class = "form-control", @id = "cel", @data_mask = "(00)00000-0000", @placeholder = "Digite somente numeros" });
+                        <br>
+
+                        @Html.Label("Email: ", new { @for = "email" });
+                        @Html.TextBoxFor(m => m.email, new { @class = "form-control", @id = "email" });
+                        <br>
+                        @Html.Label("Site/blog: ", new { @for = "site" });
+                        @Html.TextBoxFor(m => m.siteBlog, new { @class = "form-control", @id = "site" });
+                        <br>
+                        @Html.Label("Skype: ", new { @for = "sky" });
+                        @Html.TextBoxFor(m => m.skype, new { @class = "form-control", @id = "sky" });
+                        <br>
+
+                        @Html.Label("Area Pretendida: ", new { @for = "area" });
+                        @Html.DropDownList("area", (IEnumerable<SelectListItem>)ViewBag.areas, "escolha", new { @class = "form-control", @id = "estado" });
+                        <br>
+
+                        @Html.Label("Remuneração: ", new { @for = "remu" });
+                        @Html.TextBoxFor(m => m.remuneracao, new { @class = "form-control", @id = "remu", @data_mask = "00.000,00", @placeholder = "Digite somente numeros" });
+                        <br>
+                        @Html.Label("CPF: ", new { @for = "CPF" });
+                        @Html.TextBoxFor(m => m.cpf, new { @class = "form-control", @id = "CPF", @data_mask = "000.000.000-00", @placeholder = "Digite somente numeros" });
+
+                        <br>
+
+                        @Html.Label("CEP: ", new { @for = "Cep" });
+                        @Html.TextBoxFor(m => m.cep, new { @class = "form-control", @id = "Cep", @data_mask = "00000-000", @placeholder = "Digite somente numeros" });
+                        <br>
+                        @Html.Label("Rua: ", new { @for = "Rua" });
+                        @Html.TextBoxFor(m => m.rua, new { @class = "form-control", @id = "Rua" });
+
+                        <br>
+                        @Html.Label("Nº", new { @for = "num" });
+                        @Html.TextBoxFor(m => m.numero, new { @class = "form-control", @id = "num" });
+                        <br>
+                        @Html.Label("Bairro:  ", new { @for = "Bairro" });
+                        @Html.TextBoxFor(m => m.bairro, new { @class = "form-control", @id = "bairro" });
+                        <br>
+                        @Html.Label("Cidade:  ", new { @for = "Cidade" });
+                        @Html.TextBoxFor(m => m.cidade, new { @class = "form-control", @id = "cidade" });
+                        <br>
+                        @Html.Label("UF ", new { @for = "uf" });
+                        @Html.TextBoxFor(m => m.uf, new { @class = "form-control", @id = "uf" });
+                        <br>
+                        @Html.Label("Descrição:  ", new { @for = "desc" });
+                        @Html.TextBoxFor(m => m.descricao, new { @class = "form-control", @id = "desc" });
+                        <br>
+                        <br>
+                        <p>Somenete arquivos com extensões do tipo: .pdf, .doc e .docx</p>
+                        <label for="file">Anexar Currículo</label>
+                        <input type="file" name="arq" id="arq"><br><br>
+
+
+                        <button id="btn-enviarcv" type="submit" class="btn btn-success">
+
+                            <span class="glyphicon glyphicon-send"> Enviar </span>
+
+                        </button>
+
+                    }
+
+                </div>
+
+            </div>
+
+            <button id="top-btn" title="Subir"><span id="glyph-btn" class="glyphicon glyphicon-chevron-up"> </span></button>
+
+
+            <div class="row">
+                <div class="footer">
+
+                    <footer id="bloco-footer">
+
+                        @Html.Partial("_rodape")
+
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Extranet")
+    @Scripts.Render("~/bundles/Mask")
+
+</body>
+
+</html>

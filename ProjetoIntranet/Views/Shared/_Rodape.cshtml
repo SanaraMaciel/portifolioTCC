@@ -1,0 +1,59 @@
+﻿@model ProjetoIntranet.Models.Entity.MensagemEmail
+
+<div class="footer">
+    <div class="row">
+
+        <div class="col-md-6  col-sm-6 col-lg-6">
+
+            <h2 id="titulo1-footer" class="h2-format-footer"> @Recursos.Resources.Titulo6  </h2>
+
+
+            <p id="texto1-footer" class="textos-format-footer">
+               @Recursos.Resources.Endereco
+               
+                <a href="mailto:contato@hot.com" target="_blank" class="links-footer">contato.mg@foxconn.com </a>
+            </p>
+            <br>
+            <p class="textos-format-footer"><a href="http://localhost:51573/Curriculo/Curriculo" class="links-footer">@Recursos.Resources.Titulo8 </a></p>
+        </div>
+
+        <div class="col-md-6  col-sm-6 col-lg-6">
+
+            <h2 id="titulo2-footer" class="h2-format-footer">@Recursos.Resources.Titulo7 </h2>
+
+            <div id="form-div">
+
+                @using (@Html.BeginForm("Mensagem", "Home", FormMethod.Post, new { @class = "form-group" }))
+            {
+
+                    @Html.Label(@Recursos.Resources.Nome, new { @for = "nome" });
+                    @Html.TextBox("nome", "", new { size = 30, @class = "form-control" });<br>
+                    @Html.Label(@Recursos.Resources.Fone, new { @for = "fone" });
+                    @Html.TextBox("fone", "", new { size = 30, @class = "form-control" });<br>
+                    @Html.Label(@Recursos.Resources.Email, new { @for = "mail" });
+                    @Html.TextBox("mail", "", new { size = 30, @class = "form-control" });<br>
+                    @Html.Label("mensg", @Recursos.Resources.mensagem, new { @for = "msg" });
+                    @Html.TextArea("msg", "", 5, 30, new { @class = "form-control" });<br>
+
+                    <button id="btn-enviar" type="submit" class="btn btn-success">
+
+                        <span class="glyphicon glyphicon-send"> Enviar </span>
+
+                    </button>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<button id="top-btn" title="Subir ao topo" alt="subir ao topo"><span id="glyph-btn" class="glyphicon glyphicon-chevron-up"> </span></button>
+
+<div id="pos-footer" class="row">
+    <br>
+    <br> <p id="texto-pos-footer"> Desenvolvido pelos alunos da FAI</p>
+    <br>
+</div>

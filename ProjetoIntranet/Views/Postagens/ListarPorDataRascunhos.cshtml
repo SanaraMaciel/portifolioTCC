@@ -1,0 +1,179 @@
+﻿@model PagedList.IPagedList<ProjetoIntranet.Models.Entity.Postagem>
+@using PagedList.Mvc
+@using PagedList
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "ListarPorDataRascunhos";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper selected(string c, string culture, string View = "ListarPorDataRascunhos")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "Postagens", new { View = "ListarPorDataRascunhos" }))
+    {
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+
+<h2>@Recursos.Resources.Rascunhos</h2>
+
+<div class="row">
+
+    @using (Html.BeginForm("ListarPorTituloRascunhos", "Postagens", FormMethod.Post))
+    {
+        <p> <b>@Recursos.Resources.PesquisarTítulo</b></p>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            @Html.Label(@Recursos.Resources.PesquisarPorTítulo, new { @for = "titulo" })
+            @Html.TextBox("titulo", null, new { @class = "form-control" })
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+
+            <button type="submit" class="btn btn-success" style="margin-top:29px;" title="@Recursos.Resources.cliqueParaPesquisar"><span class="glyphicon glyphicon-search"> </span></button>
+
+        </div>
+
+
+    }
+
+
+</div>
+
+<div class="row">
+
+    @using (Html.BeginForm("ListarPorDataRascunhos", "Postagens", FormMethod.Post))
+    {
+        <p><b>@Recursos.Resources.PesquisarPorData</b></p>
+
+        <div class="col-lg-8 col-md-8 col-sm-8">
+
+
+
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                @Html.Label(@Recursos.Resources.DataInicial, new { @for = "dataInicial" })
+
+                @Html.TextBox("dataInicial", null, new { @class = "form-control" })
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                @Html.Label(@Recursos.Resources.DataFinal, new { @for = "dataFim" })
+
+                @Html.TextBox("dataFim", null, new { @class = "form-control" })
+            </div>
+
+
+
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+
+            <button type="submit" class="btn btn-success" style="margin-top:29px;" title="@Recursos.Resources.cliqueParaPesquisar"><span class="glyphicon glyphicon-search"> </span></button>
+
+        </div>
+
+
+
+    }
+
+
+</div>
+<br>
+
+<div class="row">
+
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.Numero)
+            </th>
+            <th>
+                @Html.DisplayName(Recursos.Resources.Corpo)
+            </th>
+            <th>
+                @Html.DisplayName(@Recursos.Resources.Titulo)
+
+            </th>
+            <th>
+                @Html.DisplayName(Recursos.Resources.Etiqueta)
+            </th>
+            <th>
+                @Html.DisplayName(Recursos.Resources.Imagens)
+            </th>
+        </tr>
+
+
+        @foreach (var Rascunho in Model)
+            {
+                using (Html.BeginForm("ExcluirRascunho", "Postagens", new { id = Rascunho.id }))
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Rascunho.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Rascunho.corpo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Rascunho.titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Rascunho.etiqueta)
+                    </td>
+                    <td>
+                        @if (Rascunho.imagensPostagens != null)
+                    {
+                        foreach (var itemImagem in Rascunho.imagensPostagens)
+                        {
+                                <br />
+                                <div class="item branding">
+                                    <img src="data:image;base64, @System.Convert.ToBase64String(itemImagem.imagem)" width="150" height="60" />
+                                </div>
+                            }
+                        }
+
+                    </td>
+
+                    <td>
+
+
+                        @Html.ActionLink(" ", "EditarRascunho", "Postagens", new { id = Rascunho.id }, new { @class = "btn-large btn btn-warning glyphicon glyphicon-pencil", title = "clique para editar o rascunho" })
+
+                        @Html.ActionLink(" ", "PublicarRascunho", "Postagens", new { id = Rascunho.id }, new { @class = "btn-large btn btn-success glyphicon glyphicon-send", title = "clique para publicar o rascunho" })
+
+                        <button type="submit" class="btn btn-large btn btn-danger glyphicon glyphicon-trash" title="clique para apagar o rascunho" id="Rascunho.id" onclick="return confirm('deseja realmente excluir este rascunho?')"></button>
+
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+
+
+
+    Página @Model.PageNumber de @Model.PageCount
+    @Html.PagedListPager(Model, Page => Url.Action("ListarPorDataRascunhos", new { pagina = Page }))
+
+</div>

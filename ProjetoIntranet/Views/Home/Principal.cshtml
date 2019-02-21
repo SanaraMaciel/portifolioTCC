@@ -1,0 +1,97 @@
+﻿@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "Principal";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper selected(string c, string culture, string View ="Principal")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+
+
+<div class="layout">
+        <div class="row">
+            @using (Html.BeginForm("SetCulture", "Postagens", new { View = "Principal" }))
+            {
+
+                <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+
+                    <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+
+                        <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+
+                    </button>
+
+                    <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                        <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+
+                    </button>
+                </div>
+            }
+        </div>
+
+        <h2>@Recursos.Resources.Principal</h2>
+
+        <div class="row">
+
+        <div class="container">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="margin-left:40%;">@Recursos.Resources.GraficoProducao</h3>
+                </div>
+                <div class="panel-body">
+                    @*<img src="@Url.Action("Graph")" alt="grafico" style="margin-left:25px;">*@
+                    <div id="chart_div" style="width: 300px; height: 230px;margin-left:35%; "></div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="row">
+
+
+
+        <div class="container">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="margin-left:40%;">@Recursos.Resources.PostagensCadastradas</h3>
+
+                </div>
+
+                <div class="panel-body">
+
+                    
+
+                        @Html.Action("ListarPostagensPrincipal", "Postagens")
+                       
+                    
+
+                   
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+    </div>
+
+    </div>
+

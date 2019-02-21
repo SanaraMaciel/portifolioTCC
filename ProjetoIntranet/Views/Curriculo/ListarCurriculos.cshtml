@@ -1,0 +1,267 @@
+﻿@model PagedList.IPagedList<ProjetoIntranet.Models.Entity.Curriculo>
+@using PagedList.Mvc
+@using PagedList
+
+
+
+@{
+    ViewBag.Title = "ListarCurriculos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Currículos cadastrados</h2>
+
+<div class="row">
+
+    
+    <div class="col-lg-6">
+
+
+        @using (Html.BeginForm("ListarCurriculos", "Curriculo", FormMethod.Post, new { @class = "form-inline", @id = "form-area" }))
+        {
+            <div id="form-group-area" class="form-group ">
+
+                @Html.Label("Digite a área a ser pesquisada:", new { @for = "area",@id="lbArera" })
+
+                @Html.TextBox("area", null, new { @class = "form-control"})
+
+            </div>
+
+                
+                <button id="btn-submit-datas" type="submit" class="btn btn-success" title="clique para pesquisar"><span class="glyphicon glyphicon-search"> </span></button>
+        }
+
+
+
+    </div>
+        
+    <div class="col-lg-6" >
+
+
+
+        @using (Html.BeginForm("ListarCurriculos", "Curriculo", FormMethod.Post, new { @class = "form-inline", @id = "form-datas" }))
+        {
+            <div id="form-group-data-inicio" class="form-group">
+
+                @Html.Label("Data Inicial:", new { @for = "dataInicial" })
+
+                @Html.TextBox("dataInicial", null, new { @class = "form-control" })
+            </div>
+
+            <div id="form-group-data-fim" class="form-group">
+
+                @Html.Label("Data Final:", new { @for = "dataFim" })
+
+                @Html.TextBox("dataFim", null, new { @class = "form-control" })
+
+
+            </div>
+
+           
+
+            <button  id="btn-submit-datas" type="submit" class="btn btn-success" title="clique para pesquisar"><span class="glyphicon glyphicon-search" > </span></button>
+
+        }
+
+
+    </div>
+
+   
+
+</div>
+
+<br>
+
+<div class="container" style="overflow-x:scroll">
+    
+    <div class="row">
+
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayName("Nome:")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Telefone Celular:")
+                    </th>
+                    <th>
+                        @Html.DisplayName("E-mail:")
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    ViewBag.item = item;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telefoneCelular)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink(" ", "Detalhes", "Curriculo", new { id = item.id }, new { @class = "btn-large btn btn-warning glyphicon glyphicon-eye-open detalhar"})*@
+
+                            <button alt="detalhar currículo " id="@item.id" class="  btn btn-warning  glyphicon glyphicon-eye-open detalhar" title="clique para detalhes do currículo"></button>
+
+                            @Html.ActionLink(" ", "Excluir", "Curriculo", new { id = item.id }, new { @class = "btn-large btn btn-danger glyphicon glyphicon-trash" })
+
+                            @*<button type="submit" class="btn btn-large btn btn-danger  glyphicon glyphicon-trash" data-toggle="modal" data-target="#delete" title="clique para excluir o currículo "></button>*@
+                            @*<div class="modal fade" id="delete" role="dialog">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="alert alert-danger">
+                                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                                    <h2>Deseja realmente apagar este Currículo?</h2>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            @Html.ActionLink(" ", "Arquivo", "Curriculo", new { id = item.anexo.id }, new { @class = "btn-large btn btn-primary glyphicon glyphicon-download", title = "clique aqui para fazer download de anexo" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+   <br>
+
+<div class="row">
+
+    <div class="container">
+
+        Página @Model.PageNumber de @Model.PageCount
+        @Html.PagedListPager(Model, Page => Url.Action("ListarCurriculos", new { pagina = Page }))
+
+    </div>
+   
+
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="detalhes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+
+   
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+            <div class="container" >  
+    
+                <div class="row">
+                    <div style="margin-left:45%;" ><b>Curriculo</b></div>
+                </div>
+
+                <label for="txbNome">Nome:</label>
+
+                <input type="text" id="txbNome" class="form-control" readonly="readonly"/>
+
+                <label for="txbSexo" >Sexo:</label>
+
+                <input type="text" id="txbSexo" class="form-control" readonly="readonly" />
+               
+
+                <label for="txbEstadoCivil">Estado Civil:</label>
+
+                <input type="text" id="txbEstadoCivil" class="form-control" readonly="readonly" />
+
+                <label for="txbNasc">Data de Nascimento:</label>
+
+                <input type="text" id="txbNasc" class="form-control" readonly="readonly" />
+
+
+                <label for="txbTel">Telefone:</label>
+
+                <input type="text" id="txbTel" class="form-control" readonly="readonly" />
+
+
+                <label for="txbCel">Telefone Celular:</label>
+
+                <input type="text" id="txbCel" class="form-control" readonly="readonly" />
+    
+
+                <label for="txbEmail">Email:</label>
+
+                <input type="text" id="txbEmail" class="form-control" readonly="readonly" />
+
+                <label for="txbSite">Site/Blog:</label>
+
+                <input type="text" id="txbSite" class="form-control" readonly="readonly" />
+
+                <label for="txbSkype">Skype:</label>
+
+                <input type="text" id="txbSkype" class="form-control" readonly="readonly" />
+
+                <label for="txbArea">Area Pretendida:</label>
+
+                <input type="text" id="txbArea" class="form-control" readonly="readonly" />
+
+                <label for="txbRemuneracao">Remuneracao:</label>
+
+                <input type="text" id="txbRemuneracao" class="form-control" readonly="readonly" />
+
+                <label for="txbCpf">CPF:</label>
+
+                <input type="text" id="txbCpf" class="form-control" readonly="readonly" />
+
+                <label for="txbCep">CEP:</label>
+
+                <input type="text" id="txbCep" class="form-control" readonly="readonly" />
+
+                <label for="txbRua">Rua:</label>
+
+                <input type="text" id="txbRua" class="form-control" readonly="readonly" />
+
+                <label for="txbNum">Nº:</label>
+
+                <input type="text" id="txbNum" class="form-control" readonly="readonly" />
+
+                <label for="txbBairro">Bairro:</label>
+
+                <input type="text" id="txbBairro" class="form-control" readonly="readonly" />
+
+                <label for="txbCidade">Cidade:</label>
+
+                <input type="text" id="txbCidade" class="form-control" readonly="readonly" />
+
+                <label for="txbUf">UF:</label>
+
+                <input type="text" id="txbUf" class="form-control" readonly="readonly" />
+
+               
+                <label for="txbDesc">Descrição:</label>
+
+                <input type="text" id="txbDesc" class="form-control" readonly="readonly" />
+
+            </div>
+
+            
+        </div>
+    </div>
+</div>

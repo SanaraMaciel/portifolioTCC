@@ -1,0 +1,59 @@
+﻿@model ProjetoIntranet.Models.Entity.MensagemEmail
+
+<div class="row">
+
+    <div class="col-md-6  col-sm-6 col-lg-6">
+
+        <h2 id="titulo1-footer" class="h2-format-footer"> Minas Gerais </h2>
+
+
+        <p id="texto1-footer" class="textos-format-footer">
+            Rua José Palma Rennó, 236<br>
+            Centro | Santa Rita do Sapucaí<br>
+            CEP 37540-000<br>
+            Fone: 55 35 3473.3085<br>
+            <a href="mailto:contato.mg@foxconn.com" target="_blank" class="links-footer">contato.mg@foxconn.com </a>
+        </p>
+        <br>
+
+    </div>
+
+    <div class="col-md-6  col-sm-6 col-lg-6">
+
+        <h2 id="titulo2-footer" class="h2-format-footer">Fale Conosco </h2>
+
+        <div id="form-div">
+
+            @using (@Html.BeginForm("Mensagem", "Curriculo", FormMethod.Post, new { @class = "form-group" }))
+            {
+
+                @Html.Label("nome:*", new { @for = "nome" });
+                @Html.TextBox("nome", "", new { size = 30, @class = "form-control" });<br>
+                @Html.Label("fone:*", new { @for = "fone" });
+                @Html.TextBox("fone", "", new { size = 30, @class = "form-control" });<br>
+                @Html.Label("e-mail:*", new { @for = "mail" });
+                @Html.TextBox("Email", "", new { size = 30, @class = "form-control" });<br>
+                @Html.Label("mensg", "mensagem:*", new { @for = "msg" });
+                @Html.TextArea("msg", "", 5, 30, new { @class = "form-control" });<br>
+
+                <button id="btn-enviar" type="submit" class="btn btn-success">
+
+                    <span class="glyphicon glyphicon-send"> Enviar </span>
+
+                </button>
+            }
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<button id="top-btn" title="Subir"><span id="glyph-btn" class="glyphicon glyphicon-chevron-up"> </span></button>
+
+<div id="pos-footer" class="row">
+    <br>
+    <br> <p id="texto-pos-footer"> Desenvolvido pelos alunos da FAI</p>
+    <br>
+</div>

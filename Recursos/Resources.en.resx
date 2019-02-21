@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ALTO" xml:space="preserve">
+    <value>HIGH</value>
+  </data>
+  <data name="Anexar" xml:space="preserve">
+    <value>Attach</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="Celular" xml:space="preserve">
+    <value>CellPhone</value>
+  </data>
+  <data name="Cep" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="como" xml:space="preserve">
+    <value>like</value>
+  </data>
+  <data name="CONTATO" xml:space="preserve">
+    <value>CONTACT</value>
+  </data>
+  <data name="CONTRASTE" xml:space="preserve">
+    <value>CONTRAST</value>
+  </data>
+  <data name="Corpo" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="Currriculo" xml:space="preserve">
+    <value>Curriculum</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Endereco" xml:space="preserve">
+    <value>Street Lorem ipsum, 222
+                Center | Santa Rita do Sapucaí
+                Zip Code 37540-000
+                Phone: 99999999</value>
+  </data>
+  <data name="ENTRAR" xml:space="preserve">
+    <value>SIG IN</value>
+  </data>
+  <data name="Enviar" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="EstadoCivil" xml:space="preserve">
+    <value>Marital Status</value>
+  </data>
+  <data name="Etiqueta" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="fone" xml:space="preserve">
+    <value>phone</value>
+  </data>
+  <data name="HISTÓRIA" xml:space="preserve">
+    <value>HISTORY</value>
+  </data>
+  <data name="HOME" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+  <data name="Imagens" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="LOCALIZAÇÃO" xml:space="preserve">
+    <value>LOCALIZATION</value>
+  </data>
+  <data name="Marcar" xml:space="preserve">
+    <value>Mark like draft</value>
+  </data>
+  <data name="mensagem" xml:space="preserve">
+    <value>message</value>
+  </data>
+  <data name="mensg" xml:space="preserve">
+    <value>message</value>
+  </data>
+  <data name="N" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="Nascimento" xml:space="preserve">
+    <value>Born</value>
+  </data>
+  <data name="Nome" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Pretendida" xml:space="preserve">
+    <value>Desired</value>
+  </data>
+  <data name="PROCESSOS" xml:space="preserve">
+    <value>PROCESS</value>
+  </data>
+  <data name="QUALIDADE" xml:space="preserve">
+    <value>QUALITY</value>
+  </data>
+  <data name="rascunho" xml:space="preserve">
+    <value>draft</value>
+  </data>
+  <data name="Remuneracao" xml:space="preserve">
+    <value>Remuneration</value>
+  </data>
+  <data name="Sexo" xml:space="preserve">
+    <value>Sex</value>
+  </data>
+  <data name="Site" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="Skype" xml:space="preserve">
+    <value>Skype</value>
+  </data>
+  <data name="TECNOLOGIA" xml:space="preserve">
+    <value>TECNOLOGY</value>
+  </data>
+  <data name="Telefone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Texto1" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt libero ac pretium varius. Sed commodo bibendum velit eget cursus. Praesent ligula sapien, faucibus eget lobortis sed, laoreet at diam. Ut sit amet dui quis magna cursus aliquam sit amet at tortor. Phasellus tristique risus nec ante suscipit pharetra. Quisque auctor ipsum ac neque accumsan dapibus. Proin quis laoreet nisi. Donec id nisl sit amet purus egestas efficitur. Nulla facilisi. Quisque faucibus eleifend tincidunt. Sed pharetra nibh eget dui dapibus interdum. Aenean feugiat varius commodo. Nunc consectetur imperdiet bibendum.</value>
+  </data>
+  <data name="Texto2" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt libero ac pretium varius. Sed commodo bibendum velit eget cursus. Praesent ligula sapien, faucibus eget lobortis sed, laoreet at diam. Ut sit amet dui quis magna cursus aliquam sit amet at tortor. Phasellus tristique risus nec ante suscipit pharetra. Quisque auctor ipsum ac neque accumsan dapibus. Proin quis laoreet nisi. Donec id nisl sit amet purus egestas efficitur. Nulla facilisi. Quisque faucibus eleifend tincidunt. Sed pharetra nibh eget dui dapibus interdum. Aenean feugiat varius commodo. Nunc consectetur imperdiet bibendum.</value>
+  </data>
+  <data name="Texto3a" xml:space="preserve">
+    <value>Sed ut commodo sapien, sit amet feugiat ligula.</value>
+  </data>
+  <data name="Texto3b" xml:space="preserve">
+    <value>Nam sodales quam varius nibh luctus, vitae tincidunt purus sagittis.</value>
+  </data>
+  <data name="Texto3c" xml:space="preserve">
+    <value>n sit amet dapibus justo. Curabitur egestas fermentum est, id lobortis enim tincidunt sed.</value>
+  </data>
+  <data name="Texto3d" xml:space="preserve">
+    <value>Etiam vel lacus ac felis hendrerit tincidunt sit amet sed arcu.</value>
+  </data>
+  <data name="Texto3e" xml:space="preserve">
+    <value>Aliquam erat volutpat. Vivamus sed tellus ac mauris facilisis bibendum.</value>
+  </data>
+  <data name="Texto4" xml:space="preserve">
+    <value>Phasellus sed facilisis justo, in imperdiet turpis. Donec lobortis consequat tristique. Proin sed sodales mauris. In condimentum, leo sit amet porta dictum, metus odio malesuada purus, et dapibus diam risus ac lectus.</value>
+  </data>
+  <data name="Texto5a" xml:space="preserve">
+    <value>• Mauris egestas sit amet odio ac malesuada</value>
+  </data>
+  <data name="Texto5b" xml:space="preserve">
+    <value>• Nunc non lobortis nunc</value>
+  </data>
+  <data name="Texto5c" xml:space="preserve">
+    <value>• Cras convallis urna id viverra condimentum</value>
+  </data>
+  <data name="Texto5d" xml:space="preserve">
+    <value>•nteger porta efficitur neque</value>
+  </data>
+  <data name="Texto5e" xml:space="preserve">
+    <value>• Aliquam ac tempus odio.</value>
+  </data>
+  <data name="Texto5f" xml:space="preserve">
+    <value>• Duis in purus vitae tortor malesuada lacinia</value>
+  </data>
+  <data name="Texto5g" xml:space="preserve">
+    <value>• Praesent tincidunt elit tellus • Cras tempor tristique dui eget sagittis</value>
+  </data>
+  <data name="Texto6" xml:space="preserve">
+    <value>n sollicitudin sodales mi. Donec mauris urna, hendrerit non risus eget, sollicitudin tempus sapien. Nullam ultrices, felis vitae suscipit sagittis, tortor arcu interdum quam, quis elementum enim justo non quam. Vestibulum auctor iaculis ipsum, a sagittis tortor placerat sit amet. In dignissim hendrerit erat eu placerat. Integer consequat vel tellus vel placerat. Donec pharetra pretium varius. Integer ac magna leo. Quisque sit amet leo nisl. Nam posuere accumsan eros, ut sodales dolor blandit vitae. Curabitur dictum justo mattis sodales placerat.</value>
+  </data>
+  <data name="Titulo" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Titulo1" xml:space="preserve">
+    <value>LOREM IPSUM IN MINAS GERAIS BRASIL</value>
+  </data>
+  <data name="Titulo2" xml:space="preserve">
+    <value>PROCESSES OFFERED</value>
+  </data>
+  <data name="Titulo3" xml:space="preserve">
+    <value>INNOVATIVE TECHNOLOGY</value>
+  </data>
+  <data name="Titulo4" xml:space="preserve">
+    <value>QUALITY MANAGEMENT SYSTEM</value>
+  </data>
+  <data name="Titulo5" xml:space="preserve">
+    <value>STRATEGIC LOCATION</value>
+  </data>
+  <data name="Titulo6" xml:space="preserve">
+    <value>Minas Gerais</value>
+  </data>
+  <data name="Titulo7" xml:space="preserve">
+    <value>Talk with Us</value>
+  </data>
+  <data name="Titulo8" xml:space="preserve">
+    <value>WORK ON THE LOREM IPSUM (EXTERNAL LINK)</value>
+  </data>
+  <data name="Trabalhe" xml:space="preserve">
+    <value>Work</value>
+  </data>
+  <data name="Buscar" xml:space="preserve">
+    <value>send for:</value>
+  </data>
+  <data name="cliqueParaPesquisar" xml:space="preserve">
+    <value>click to search</value>
+  </data>
+  <data name="CriarPostagem" xml:space="preserve">
+    <value>Create Posting</value>
+  </data>
+  <data name="DataFinal" xml:space="preserve">
+    <value>final date:</value>
+  </data>
+  <data name="DataInicial" xml:space="preserve">
+    <value>Initial date:</value>
+  </data>
+  <data name="EditarRascunho" xml:space="preserve">
+    <value>Edit Draft</value>
+  </data>
+  <data name="EnviarImagens" xml:space="preserve">
+    <value>Send Image(s)</value>
+  </data>
+  <data name="PesquisarPorData" xml:space="preserve">
+    <value>Search by date</value>
+  </data>
+  <data name="PesquisarPorTítulo" xml:space="preserve">
+    <value>Enter the title of the post to search:</value>
+  </data>
+  <data name="PesquisarPorTítuloRascunho" xml:space="preserve">
+    <value>Enter the title of the draft to search:</value>
+  </data>
+  <data name="PesquisarTítulo" xml:space="preserve">
+    <value>Search by title</value>
+  </data>
+  <data name="PostagensCadastradas" xml:space="preserve">
+    <value>Registered posting</value>
+  </data>
+  <data name="Rascunhos" xml:space="preserve">
+    <value>Registered drafts</value>
+  </data>
+  <data name="BemVindo" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="GraficoProducao" xml:space="preserve">
+    <value>Production chart</value>
+  </data>
+  <data name="Numero" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="Principal" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="Sair" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="AdicionarLinks" xml:space="preserve">
+    <value>Add links</value>
+  </data>
+  <data name="AssociacaoFeitaSucesso" xml:space="preserve">
+    <value>Association made successfully, click save to store the data!</value>
+  </data>
+  <data name="AssociacaoRealizada" xml:space="preserve">
+    <value>Association successfully held!</value>
+  </data>
+  <data name="Associar" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="AssociarLinks" xml:space="preserve">
+    <value>Linking to groups</value>
+  </data>
+  <data name="AssociarUsuario" xml:space="preserve">
+    <value>Connect users to groups</value>
+  </data>
+  <data name="AssociaçãoDesfeita" xml:space="preserve">
+    <value>Association successfully disbanded.</value>
+  </data>
+  <data name="CadastroMenus" xml:space="preserve">
+    <value>Menu Record</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CliqueAdicionarFilhos" xml:space="preserve">
+    <value>Click to add children to the menu!</value>
+  </data>
+  <data name="CliqueParaExcluir" xml:space="preserve">
+    <value>Click to Delete!</value>
+  </data>
+  <data name="codigoPai" xml:space="preserve">
+    <value>Father code</value>
+  </data>
+  <data name="DesassociarLinks" xml:space="preserve">
+    <value>Unlink the group links</value>
+  </data>
+  <data name="DesativarAtivar" xml:space="preserve">
+    <value>Disable / Enable Users</value>
+  </data>
+  <data name="EditarMenu" xml:space="preserve">
+    <value>Edit Menu</value>
+  </data>
+  <data name="ErroCampo" xml:space="preserve">
+    <value>Error name and / or empty URL fields !</value>
+  </data>
+  <data name="ErroLink" xml:space="preserve">
+    <value>Error: No Link has been associated!</value>
+  </data>
+  <data name="EscolhaUsuario" xml:space="preserve">
+    <value>Choice user</value>
+  </data>
+  <data name="Filhos" xml:space="preserve">
+    <value>Childrens</value>
+  </data>
+  <data name="Grupos" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="GruposExistentes" xml:space="preserve">
+    <value>Existing groups</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Ingles" xml:space="preserve">
+    <value>Click to change language to English!</value>
+  </data>
+  <data name="LinkExcluido" xml:space="preserve">
+    <value>Link deleted successfully!</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LinksCadastrados" xml:space="preserve">
+    <value>Links Registered</value>
+  </data>
+  <data name="ListaFilhos" xml:space="preserve">
+    <value>list of children for the father:</value>
+  </data>
+  <data name="NenhumLink" xml:space="preserve">
+    <value>No links selected, please select at least one to edit the menu!</value>
+  </data>
+  <data name="ordem" xml:space="preserve">
+    <value>order</value>
+  </data>
+  <data name="pai" xml:space="preserve">
+    <value>father</value>
+  </data>
+  <data name="Portugues" xml:space="preserve">
+    <value>Click to change language to Portuguese!</value>
+  </data>
+  <data name="Salvar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SalvoSucesso" xml:space="preserve">
+    <value>Saved successfully!</value>
+  </data>
+  <data name="Selecioneumgrupo" xml:space="preserve">
+    <value>Select  group</value>
+  </data>
+  <data name="URLSalva" xml:space="preserve">
+    <value>URL saved successfully!</value>
+  </data>
+  <data name="ÉFilho" xml:space="preserve">
+    <value>Is Son !</value>
+  </data>
+  <data name="Ativo" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="BU" xml:space="preserve">
+    <value>BU</value>
+  </data>
+  <data name="CadastrarUsuario" xml:space="preserve">
+    <value>Register user</value>
+  </data>
+  <data name="Cargo" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="centroCusto" xml:space="preserve">
+    <value>Cost center</value>
+  </data>
+  <data name="CriarGrupo" xml:space="preserve">
+    <value>Create group</value>
+  </data>
+  <data name="Descricao" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Detalhes" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="GrupoELinks" xml:space="preserve">
+    <value>Group and links</value>
+  </data>
+  <data name="LoginUsuario" xml:space="preserve">
+    <value>User login</value>
+  </data>
+  <data name="Negado" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="Permissao" xml:space="preserve">
+    <value>You do not have permission to access this resource ...</value>
+  </data>
+  <data name="Privilegios" xml:space="preserve">
+    <value>Privileges</value>
+  </data>
+  <data name="Senha" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Setor" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="situacao" xml:space="preserve">
+    <value>Situation</value>
+  </data>
+  <data name="UrlGrafico" xml:space="preserve">
+    <value>Chart Url</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Voltar" xml:space="preserve">
+    <value>Click here to return</value>
+  </data>
+</root>

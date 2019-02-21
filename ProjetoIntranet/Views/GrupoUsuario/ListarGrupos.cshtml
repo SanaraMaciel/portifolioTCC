@@ -1,0 +1,118 @@
+﻿@model IEnumerable<ProjetoIntranet.Models.Entity.GrupoUsuario>
+@Recursos.Resources.Culture
+
+@{
+    ViewBag.Title = "ListarGrupos";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@helper selected(string c, string culture, string View = "ListarGrupos")
+{
+if (c == culture)
+{
+        @:checked="checked"
+    }
+}
+
+<div class="row">
+    @using (Html.BeginForm("SetCulture", "GrupoUsuario", new { View = "ListarGrupos" }))
+    {
+
+        <div id="language-icons" class="col-md-offset-10 col-sm-offset-10">
+            <button href="" id="pt-Br" value="pt-Br" selected("pt-Br", culture) name="culture" type="submit">
+                <img src="~/Resources/pt_br.png" alt="ícone bandeira Brasileira" title="@Recursos.Resources.Portugues" type="submit" />
+
+            </button>
+            <button href="" id="en-us" value="en-us" selected("en-us", culture) type="submit" name="culture">
+                <img src="~/Resources/en_us.png" alt="ícone bandeira Americana" title="@Recursos.Resources.Ingles" type="submit" />
+            </button>
+        </div>
+    }
+</div>
+
+<h2>@Recursos.Resources.GruposExistentes</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName(Recursos.Resources.Nome)
+        </th>
+        <th>
+            @Html.DisplayName(Recursos.Resources.Descricao)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+              <td>                  
+                 
+                  <button type="button" id="@item.id" class=" btn btn-danger glyphicon glyphicon-trash btnExcluirGrupos"></button>
+
+               </td>
+    </tr>
+}
+
+</table>
+
+
+<div class="container">
+    <div class="modal fade" id="feedbackExcluirGrupo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="alert alert-success" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <b>Grupo excluido com sucesso!</b>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="modal fade" id="feedbackExcluirGrupoFalha" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <b>Existe(m) usuário(s) associado(s) ao grupo.</b>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<button type="submit" class="btn btn-large btn btn-danger  glyphicon glyphicon-trash" title="clique para excluir um grupo" data-toggle="modal" data-target="#confirm"></button>
+<div class="modal fade" id="confirm" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Somente é possível apagar um grupo se não houver nenhum usuário ativo associado a ele</h2>
+                <h2>Desative todos os usuários do grupo para depois apagá-lo</h2>
+                <h2>Deseja realmente apagar este grupo?</h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="@item.id" class=" btn btn-danger btnExcluirGrupos">Apagar</button>
+                <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+</div>*@
+
